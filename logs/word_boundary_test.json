@@ -1,0 +1,18 @@
+{
+  "n_utterances": 79,
+  "mean_precision": 0.30271225010614433,
+  "median_precision": 0.2857142857142857,
+  "mean_recall": 0.4476230169268144,
+  "median_recall": 0.42857142857142855,
+  "mean_f1": 0.3446444503041028,
+  "median_f1": 0.3333333328888889,
+  "mean_audio_silences_per_word": 0.25996246911182297,
+  "mean_emg_dips_per_word": 0.4058799048992924,
+  "mean_duration_s": 8.708987341772152,
+  "tolerance_ms": 100,
+  "method": "audio silences (gnd truth) vs EMG face-channel envelope dips",
+  "envelope_window_ms": 50,
+  "silence_min_dur_ms": 80,
+  "audio_threshold_pctile": 15,
+  "emg_threshold_pctile": 20
+}
