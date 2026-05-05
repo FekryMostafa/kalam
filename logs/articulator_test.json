@@ -1,0 +1,55 @@
+{
+  "method": "paired voiced/silent EMG, same text, 7 sessions, Gaddy preprocessed (notch+2Hz HP)",
+  "n_pairs": 1583,
+  "channel_to_anatomy": {
+    "0": "lips_L",
+    "1": "chin_L",
+    "2": "floor_of_mouth",
+    "3": "larynx",
+    "4": "jaw_R",
+    "5": "lips_R",
+    "6": "upper_face",
+    "7": "masseter"
+  },
+  "silent_over_voiced_rms_per_group": {
+    "larynx": 0.3679865896701813,
+    "lips": 0.7808622121810913,
+    "chin_lower_lip": 0.8419519066810608,
+    "floor_of_mouth": 0.6926159858703613,
+    "jaw_masseter": 0.748571515083313,
+    "upper_face": 0.779296875
+  },
+  "silent_over_voiced_activity_ratio_per_group": {
+    "larynx": 0.5067676901817322,
+    "lips": 1.195539951324463,
+    "chin_lower_lip": 1.2222822904586792,
+    "floor_of_mouth": 0.9827367067337036,
+    "jaw_masseter": 1.092315912246704,
+    "upper_face": 1.243035912513733
+  },
+  "voiced_centroid_hz_per_group": {
+    "larynx": 66.1238784790039,
+    "lips": 46.415775299072266,
+    "chin_lower_lip": 79.6749038696289,
+    "floor_of_mouth": 51.16785430908203,
+    "jaw_masseter": 58.369850158691406,
+    "upper_face": 51.142982482910156
+  },
+  "silent_centroid_hz_per_group": {
+    "larynx": 44.00736618041992,
+    "lips": 48.97965621948242,
+    "chin_lower_lip": 80.43437957763672,
+    "floor_of_mouth": 55.328670501708984,
+    "jaw_masseter": 62.89202880859375,
+    "upper_face": 54.517738342285156
+  },
+  "centroid_shift_hz_per_group": {
+    "larynx": -22.116512298583984,
+    "lips": 2.5638809204101562,
+    "chin_lower_lip": 0.7594757080078125,
+    "floor_of_mouth": 4.160816192626953,
+    "jaw_masseter": 4.522182464599609,
+    "upper_face": 3.374755859375
+  },
+  "duration_silent_over_voiced_median": 0.9147771696637998
+}

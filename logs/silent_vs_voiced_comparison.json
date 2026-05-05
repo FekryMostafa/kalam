@@ -19,6 +19,6 @@
     "ch0": -0.03, "ch1": 0.01, "ch2": 0.02, "ch3": 0.21,
     "ch4": -0.04, "ch5": -0.02, "ch6": 0.01, "ch7": 0.01
   },
-  "script": "experiments/analyze_silent_voiced.py",
+  "script": "experiments/silent_vs_voiced/analyze_silent_voiced.py",
   "plots_dir": "experiments/analysis/silent_vs_voiced/"
 }

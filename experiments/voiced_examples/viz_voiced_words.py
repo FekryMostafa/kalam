@@ -9,10 +9,12 @@ import matplotlib.pyplot as plt
 from scipy import signal as sps
 
 # Paths are resolved relative to where you run this from.
-DATA_ROOT = os.environ.get('KALAM_DATA', '/Users/fekrymostafa/Desktop/kalam/experiments/dataset')
-OUT = os.environ.get('KALAM_VISUALS', '/Users/fekrymostafa/Desktop/kalam/Project kalam/visuals/voiced_examples')
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+DATA_ROOT = os.environ.get('KALAM_DATA', os.path.join(PROJECT_ROOT, 'dataset'))
+OUT = os.environ.get('KALAM_VISUALS', os.path.join(PROJECT_ROOT, 'visuals', 'voiced_examples'))
 os.makedirs(OUT, exist_ok=True)
 SR = 1000
+CHANNELS = ['lips_L', 'chin_L', 'floor_of_mouth', 'larynx', 'jaw_R', 'lips_R', 'upper_face', 'masseter']
 
 def preprocess(emg):
     out = emg.astype(np.float32).copy()
@@ -59,7 +61,7 @@ def plot_grid(triplets, fname, title):
             ax.grid(alpha=0.25)
             ax.set_yticks([])
             if col == 0:
-                ax.set_ylabel(f'ch{c}', rotation=0, ha='right', va='center')
+                ax.set_ylabel(CHANNELS[c], rotation=0, ha='right', va='center')
         axes[0, col].set_title(f'{label}\n"{text[:60]}"', fontsize=9)
         axes[-1, col].set_xlabel('s')
     fig.suptitle(title, fontsize=12)
@@ -75,7 +77,7 @@ def plot_single_envelope(text, emg_path, fname):
         axes[c].plot(t, envelope(emg[:, c], 50), color='crimson', lw=1.0)
         axes[c].set_ylim(-5, 5)
         axes[c].grid(alpha=0.25)
-        axes[c].set_ylabel(f'ch{c}', rotation=0, ha='right', va='center')
+        axes[c].set_ylabel(CHANNELS[c], rotation=0, ha='right', va='center')
         axes[c].set_yticks([])
     axes[-1].set_xlabel('time (s)')
     fig.suptitle(f'Voiced EMG (preprocessed, z-scored) — "{text}"', fontsize=11)
