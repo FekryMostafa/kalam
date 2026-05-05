@@ -10,7 +10,7 @@ from scipy import signal as sps
 OUT = 'analysis/silent_vs_voiced'
 os.makedirs(OUT, exist_ok=True)
 SR = 1000  # raw EMG sample rate
-CHANNELS = ['ch0', 'ch1', 'ch2', 'ch3', 'ch4', 'ch5', 'ch6', 'ch7']
+CHANNELS = ['lips_L', 'chin_L', 'floor_of_mouth', 'larynx', 'jaw_R', 'lips_R', 'upper_face', 'masseter']
 
 def load_text(info_path):
     try:
@@ -130,7 +130,7 @@ def plot_traces(text, v, si, fname):
     t_s = np.arange(len(si)) / SR
     for c in range(8):
         axes[c, 0].plot(t_v, v[:, c], color='steelblue', lw=0.5)
-        axes[c, 0].set_ylabel(f'ch{c}')
+        axes[c, 0].set_ylabel(CHANNELS[c])
         axes[c, 1].plot(t_s, si[:, c], color='crimson', lw=0.5)
         for ax in axes[c]:
             ax.grid(alpha=0.3)
@@ -148,7 +148,7 @@ def plot_spectra(text, v, si, fname):
         fs_, Ps = sps.welch(si[:, c], fs=SR, nperseg=min(1024, len(si)))
         ax.semilogy(fv, Pv, color='steelblue', label='voiced', lw=1)
         ax.semilogy(fs_, Ps, color='crimson', label='silent', lw=1)
-        ax.set_title(f'ch{c}'); ax.set_xlim(0, 500); ax.grid(alpha=0.3)
+        ax.set_title(CHANNELS[c]); ax.set_xlim(0, 500); ax.grid(alpha=0.3)
         if c == 0: ax.legend()
         if c // 4 == 1: ax.set_xlabel('Hz')
         if c % 4 == 0: ax.set_ylabel('PSD')
@@ -188,7 +188,7 @@ for c in range(8):
     ax = axes[c // 4, c % 4]
     ax.semilogy(freqs, psd_v[c], color='steelblue', label='voiced', lw=1.2)
     ax.semilogy(freqs, psd_s[c], color='crimson', label='silent', lw=1.2)
-    ax.set_title(f'ch{c}'); ax.set_xlim(0, 500); ax.grid(alpha=0.3)
+    ax.set_title(CHANNELS[c]); ax.set_xlim(0, 500); ax.grid(alpha=0.3)
     if c == 0: ax.legend()
     if c // 4 == 1: ax.set_xlabel('Hz')
     if c % 4 == 0: ax.set_ylabel('avg PSD')
@@ -199,7 +199,7 @@ print('  saved 05_avg_spectrum.png')
 # Spectral ratio
 fig, ax = plt.subplots(1, 1, figsize=(10, 5))
 for c in range(8):
-    ax.plot(freqs, psd_s[c] / np.maximum(psd_v[c], 1e-9), label=f'ch{c}', lw=1)
+    ax.plot(freqs, psd_s[c] / np.maximum(psd_v[c], 1e-9), label=CHANNELS[c], lw=1)
 ax.axhline(1.0, color='k', ls='--')
 ax.set_xlim(0, 500); ax.set_yscale('log')
 ax.set_xlabel('Hz'); ax.set_ylabel('silent / voiced PSD')
@@ -238,7 +238,7 @@ for c in range(8):
     f, t, Sv = sps.spectrogram(v[:, c], fs=SR, nperseg=256, noverlap=192)
     f, t2, Ss = sps.spectrogram(si[:, c], fs=SR, nperseg=256, noverlap=192)
     axes[c, 0].pcolormesh(t, f, 10*np.log10(Sv + 1e-12), shading='auto', cmap='viridis')
-    axes[c, 0].set_ylabel(f'ch{c}\nHz'); axes[c, 0].set_ylim(0, 400)
+    axes[c, 0].set_ylabel(f'{CHANNELS[c]}\nHz'); axes[c, 0].set_ylim(0, 400)
     axes[c, 1].pcolormesh(t2, f, 10*np.log10(Ss + 1e-12), shading='auto', cmap='viridis')
     axes[c, 1].set_ylim(0, 400)
 axes[0, 0].set_title('VOICED'); axes[0, 1].set_title('SILENT')
@@ -295,10 +295,10 @@ with open(f'{OUT}/summary.md', 'w') as f:
 ## Headline numbers
 
 - **Amplitude (std) per channel — silent / voiced median ratio:**
-  ch0={amp_ratio[0]:.2f}, ch1={amp_ratio[1]:.2f}, ch2={amp_ratio[2]:.2f}, ch3={amp_ratio[3]:.2f}, ch4={amp_ratio[4]:.2f}, ch5={amp_ratio[5]:.2f}, ch6={amp_ratio[6]:.2f}, ch7={amp_ratio[7]:.2f}
+  lips_L={amp_ratio[0]:.2f}, chin_L={amp_ratio[1]:.2f}, floor_of_mouth={amp_ratio[2]:.2f}, larynx={amp_ratio[3]:.2f}, jaw_R={amp_ratio[4]:.2f}, lips_R={amp_ratio[5]:.2f}, upper_face={amp_ratio[6]:.2f}, masseter={amp_ratio[7]:.2f}
 - **Duration ratio (silent/voiced):** median = **{dur_ratio:.3f}** ({(1-dur_ratio)*100:.1f}% shorter on silent on average)
 - **Cross-channel correlation matrix difference (silent−voiced):** mean abs = {np.mean(np.abs(corrs_s-corrs_v)):.3f}
-- **Paired Pearson r per channel (head-aligned, raw):** ''' + ', '.join(f'ch{c}={np.nanmedian(prs[:,c]):.2f}' for c in range(8)) + '''
+- **Paired Pearson r per channel (head-aligned, raw):** ''' + ', '.join(f'{CHANNELS[c]}={np.nanmedian(prs[:,c]):.2f}' for c in range(8)) + '''
 
 ## Spectral band powers (silent/voiced ratio)
 

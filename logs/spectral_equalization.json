@@ -23,6 +23,6 @@
     "delta_mean": -0.0917,
     "improved_pct": 0.7
   },
-  "script": "experiments/exp_spectral_eq.py",
+  "script": "experiments/silent_vs_voiced/exp_spectral_eq.py",
   "raw_results": "experiments/analysis/silent_vs_voiced/spectral_eq_results.npz"
 }
