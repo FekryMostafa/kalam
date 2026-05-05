@@ -45,9 +45,37 @@ Larynx activity ratio is 0.51 and centroid shift is -22.1 Hz. Lips, `upper_face`
 
 [`logs/articulator_test.json`](../logs/articulator_test.json)
 
+## Visemes
+
+A viseme is the visual mouth shape produced by one or more phonemes. Phonemes that look identical on the face (e.g. `b` `p` `m` — lips closed) collapse to one viseme. There is no standard inventory: MPEG-4 defines 15 (14 + silence), Disney animation uses ~12, Microsoft Speech defines 22.
+
+A common 13-class English mapping:
+
+```
+viseme            phonemes                    articulator
+lip_closed        b   p   m                   lips press together
+lip_to_teeth      f   v                       lower lip touches upper teeth
+tongue_tip_teeth  th (voiced + unvoiced)      tongue between teeth
+tongue_alveolar   t   d   s   z   n   l       tongue tip near upper teeth ridge
+back_of_mouth     k   g   ng                  back of tongue raises
+sh_zh             sh  zh  ch  jh              tongue middle raises, lips rounded
+r                 r                           tongue curls
+w                 w                           lips round
+y                 y                           tongue front raises
+ah                a (cat, father)             mouth open
+eh                e (bed)                     mouth half open
+ee                ee (see), i (sit)           mouth wide
+oh                o (go)                      lips rounded
+oo                u (food)                    lips fully rounded
+```
+
+Phonemes that differ only in voicing (`b/p`, `t/d`, `s/z`, `f/v`) collapse to the same viseme.
+
 ## Sources
 - [Gaddy & Klein 2020 — Digital Voicing of Silent Speech](https://aclanthology.org/2020.emnlp-main.445.pdf)
 - [Stepp et al. 2021 — Intrinsic Laryngeal Muscle Activity During Subvocalization](https://pubmed.ncbi.nlm.nih.gov/33612369/)
 - [Lee et al. 2021 — Visibility in Silent Speech Tongue Movements (JSLHR)](https://pubs.asha.org/doi/10.1044/2021_JSLHR-20-00266)
 - [Calliope et al. — Articulatory strategies for lip and tongue movements (HAL-SHS)](https://shs.hal.science/halshs-00610870)
 - [Hueber et al. — Silent vs Vocalized Articulation, Ultrasound SSI](https://www.academia.edu/1359056/Silent_vs_vocalized_articulation_for_a_portable_ultrasound-based_silent_speech_interface)
+- [Cappelletta & Harte — Phoneme-to-Viseme Mapping for Visual Speech Recognition](https://www.scitepress.org/papers/2012/37319/37319.pdf)
+- [Microsoft Speech viseme reference (22-viseme inventory)](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-speech-synthesis-viseme)
