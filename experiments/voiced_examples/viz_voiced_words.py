@@ -1,83 +1,61 @@
-"""Visual: voiced EMG traces for a handful of utterances to build intuition.
+"""Visual: voiced EMG traces for a few utterances.
 
-Picks short/similar/different texts and draws all 8 channels stacked.
+Applies Gaddy-style preprocessing (notch 60 Hz harmonics + 2 Hz highpass)
+and z-scores per channel before plotting so speech activity is visible.
 """
 import os, glob, json
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy import signal as sps
 
-OUT = 'analysis/voiced_examples'
+# Paths are resolved relative to where you run this from.
+DATA_ROOT = os.environ.get('KALAM_DATA', '/Users/fekrymostafa/Desktop/kalam/experiments/dataset')
+OUT = os.environ.get('KALAM_VISUALS', '/Users/fekrymostafa/Desktop/kalam/Project kalam/visuals/voiced_examples')
 os.makedirs(OUT, exist_ok=True)
 SR = 1000
 
-# ---- gather voiced items with short texts ----
-items = []
-for s in ['5-4', '5-5', '5-6', '5-10', '5-11', '5-8', '5-9']:
-    d = f'dataset/voiced_parallel_data/{s}'
-    for info in glob.glob(f'{d}/*_info.json'):
-        try:
-            text = json.load(open(info)).get('text', '').strip()
-        except Exception:
-            continue
-        if not text:
-            continue
-        idx = os.path.basename(info).replace('_info.json', '')
-        emg = f'{d}/{idx}_emg.npy'
-        if os.path.exists(emg):
-            items.append((text, emg, s))
+def preprocess(emg):
+    out = emg.astype(np.float32).copy()
+    for hz in [60, 120, 180, 240, 300, 360, 420]:
+        b, a = sps.iirnotch(hz, Q=30, fs=SR)
+        out = sps.filtfilt(b, a, out, axis=0)
+    b, a = sps.butter(4, 2.0, btype='high', fs=SR)
+    out = sps.filtfilt(b, a, out, axis=0)
+    return out.astype(np.float32)
 
-print(f'{len(items)} voiced items')
+def envelope(x, win=50):
+    return np.convolve(np.abs(x), np.ones(win)/win, mode='same')
 
-# Also check closed_vocab voiced — it has short dates/times
-for s in os.listdir('dataset/closed_vocab/voiced'):
-    d = f'dataset/closed_vocab/voiced/{s}'
-    if not os.path.isdir(d):
-        continue
-    for info in glob.glob(f'{d}/*_info.json'):
-        try:
-            text = json.load(open(info)).get('text', '').strip()
-        except Exception:
-            continue
-        if not text:
-            continue
-        idx = os.path.basename(info).replace('_info.json', '')
-        emg = f'{d}/{idx}_emg.npy'
-        if os.path.exists(emg):
-            items.append((text, emg, f'cv/{s}'))
-
-print(f'{len(items)} total (incl. closed_vocab)')
-
-short = [it for it in items if len(it[0].split()) <= 5]
-long_ = [it for it in items if 8 <= len(it[0].split()) <= 14]
-print(f'short (<=5 words): {len(short)}, medium (8-14): {len(long_)}')
-
-# ---- helper plots ----
-def plot_one(text, emg_path, fname, title_suffix=''):
-    emg = np.load(emg_path).astype(np.float32)
-    t = np.arange(emg.shape[0]) / SR
-    fig, axes = plt.subplots(8, 1, figsize=(13, 8), sharex=True)
-    colors = plt.cm.viridis(np.linspace(0.05, 0.85, 8))
-    for c in range(8):
-        axes[c].plot(t, emg[:, c], color=colors[c], lw=0.5)
-        axes[c].set_ylabel(f'ch{c}', rotation=0, ha='right', va='center')
-        axes[c].grid(alpha=0.25)
-        axes[c].set_yticks([])
-    axes[-1].set_xlabel('time (seconds)')
-    fig.suptitle(f'"{text}"{title_suffix}    [{emg.shape[0]/SR:.2f}s]', fontsize=11)
-    plt.tight_layout(); plt.savefig(fname, dpi=110); plt.close()
+def gather_items():
+    items = []
+    for s in ['5-4', '5-5', '5-6', '5-10', '5-11', '5-8', '5-9']:
+        d = f'{DATA_ROOT}/voiced_parallel_data/{s}'
+        for info in glob.glob(f'{d}/*_info.json'):
+            try:
+                text = json.load(open(info)).get('text', '').strip()
+            except Exception:
+                continue
+            if not text: continue
+            idx = os.path.basename(info).replace('_info.json', '')
+            emg = f'{d}/{idx}_emg.npy'
+            if os.path.exists(emg):
+                items.append((text, emg, s))
+    return items
 
 def plot_grid(triplets, fname, title):
-    """triplets: list of (label, text, emg_path). Plot 8 channels x N columns."""
     n = len(triplets)
-    fig, axes = plt.subplots(8, n, figsize=(5*n, 9), sharey='row')
+    fig, axes = plt.subplots(8, n, figsize=(5.5*n, 9))
     if n == 1:
         axes = axes.reshape(8, 1)
     for col, (label, text, emg_path) in enumerate(triplets):
-        emg = np.load(emg_path).astype(np.float32)
+        emg = preprocess(np.load(emg_path).astype(np.float32))
+        emg = (emg - emg.mean(0)) / (emg.std(0) + 1e-6)
         t = np.arange(emg.shape[0]) / SR
         for c in range(8):
             ax = axes[c, col]
-            ax.plot(t, emg[:, c], lw=0.4, color='steelblue')
+            ax.plot(t, emg[:, c], lw=0.4, color='gray', alpha=0.7)
+            ax.plot(t, envelope(emg[:, c], 50), lw=1.2, color='crimson')
+            ax.set_ylim(-5, 5)
             ax.grid(alpha=0.25)
             ax.set_yticks([])
             if col == 0:
@@ -87,75 +65,66 @@ def plot_grid(triplets, fname, title):
     fig.suptitle(title, fontsize=12)
     plt.tight_layout(); plt.savefig(fname, dpi=110); plt.close()
 
-# ---- 1. Three different short utterances side-by-side ----
-rng = np.random.default_rng(0)
-picks = []
-seen_texts = set()
-for it in short:
-    if it[0].lower() not in seen_texts:
-        picks.append(it); seen_texts.add(it[0].lower())
-    if len(picks) >= 3: break
-plot_grid([(f'short {i+1}', t, p) for i,(t,p,_) in enumerate(picks)],
-          f'{OUT}/01_three_short_utterances.png',
-          'Voiced EMG — three different short utterances')
-print('saved 01_three_short_utterances.png')
+def plot_single_envelope(text, emg_path, fname):
+    emg = preprocess(np.load(emg_path).astype(np.float32))
+    emg = (emg - emg.mean(0)) / (emg.std(0) + 1e-6)
+    t = np.arange(emg.shape[0]) / SR
+    fig, axes = plt.subplots(8, 1, figsize=(13, 9), sharex=True)
+    for c in range(8):
+        axes[c].plot(t, emg[:, c], color='lightgray', lw=0.4)
+        axes[c].plot(t, envelope(emg[:, c], 50), color='crimson', lw=1.0)
+        axes[c].set_ylim(-5, 5)
+        axes[c].grid(alpha=0.25)
+        axes[c].set_ylabel(f'ch{c}', rotation=0, ha='right', va='center')
+        axes[c].set_yticks([])
+    axes[-1].set_xlabel('time (s)')
+    fig.suptitle(f'Voiced EMG (preprocessed, z-scored) — "{text}"', fontsize=11)
+    plt.tight_layout(); plt.savefig(fname, dpi=110); plt.close()
 
-# ---- 2. Same text, two different sessions (does the same word look the same?) ----
-# Find a text spoken in 2 different sessions (closed_vocab is small, often repeats)
-text_to_paths = {}
-for text, p, s in items:
-    text_to_paths.setdefault(text.lower(), []).append((text, p, s))
-repeated = [(t, lst) for t, lst in text_to_paths.items() if len(lst) >= 2 and len(t.split()) <= 5]
-if repeated:
-    text, lst = repeated[0]
-    plot_grid([(f'session {lst[0][2]}', lst[0][0], lst[0][1]),
-               (f'session {lst[1][2]}', lst[1][0], lst[1][1])],
-              f'{OUT}/02_same_text_two_sessions.png',
-              f'Voiced EMG — same words spoken on different days')
-    print('saved 02_same_text_two_sessions.png')
+if __name__ == '__main__':
+    items = gather_items()
+    print(f'{len(items)} voiced items')
+    short = [it for it in items if 2 <= len(it[0].split()) <= 5]
+    long_ = [it for it in items if 8 <= len(it[0].split()) <= 14]
 
-# ---- 3. Long-vs-short side-by-side (intuition: longer = more sustained activity) ----
-short_pick = next(it for it in short if len(it[0]) > 5)
-long_pick = next(it for it in long_)
-plot_grid([('SHORT', short_pick[0], short_pick[1]),
-           ('LONG',  long_pick[0],  long_pick[1])],
-          f'{OUT}/03_short_vs_long.png',
-          'Voiced EMG — short utterance vs long utterance')
-print('saved 03_short_vs_long.png')
+    seen = set(); picks = []
+    for it in short:
+        if it[0].lower() not in seen:
+            picks.append(it); seen.add(it[0].lower())
+        if len(picks) == 3: break
 
-# ---- 4. Phonetically different short utterances ----
-# Try to pick one heavy on lip closures (b/p/m) vs one heavy on tongue/throat (t/k/g)
-def has_phonemes(text, chars):
-    t = text.lower()
-    return sum(t.count(c) for c in chars)
+    plot_grid([(f'short {i+1}', t, p) for i,(t,p,_) in enumerate(picks)],
+              f'{OUT}/01_three_short_utterances.png',
+              'Voiced EMG (preprocessed, z-scored) — three different short utterances')
+    print('saved 01')
 
-lippy = sorted(short, key=lambda x: -has_phonemes(x[0], 'bpmf'))[:5]
-tonguey = sorted(short, key=lambda x: -has_phonemes(x[0], 'tkg'))[:5]
-if lippy and tonguey:
+    text_to_paths = {}
+    for text, p, s in items:
+        text_to_paths.setdefault(text.lower(), []).append((text, p, s))
+    repeated = [(t, lst) for t, lst in text_to_paths.items()
+                if len(lst) >= 2 and 2 <= len(t.split()) <= 6]
+    if repeated:
+        text, lst = repeated[0]
+        plot_grid([(f'session {lst[0][2]}', lst[0][0], lst[0][1]),
+                   (f'session {lst[1][2]}', lst[1][0], lst[1][1])],
+                  f'{OUT}/02_same_text_two_sessions.png',
+                  'Voiced EMG — same words spoken on different days')
+        print('saved 02')
+
+    plot_grid([('SHORT', picks[0][0], picks[0][1]),
+               ('LONG',  long_[0][0],  long_[0][1])],
+              f'{OUT}/03_short_vs_long.png',
+              'Voiced EMG — short utterance vs long utterance')
+    print('saved 03')
+
+    def has(text, chars): return sum(text.lower().count(c) for c in chars)
+    lippy = sorted(short, key=lambda x: -has(x[0], 'bpmf'))
+    tonguey = sorted(short, key=lambda x: -has(x[0], 'tkg'))
     plot_grid([('"lippy" (b/p/m/f)', lippy[0][0], lippy[0][1]),
                ('"tonguey" (t/k/g)', tonguey[0][0], tonguey[0][1])],
               f'{OUT}/04_lippy_vs_tonguey.png',
               'Voiced EMG — phonetically different short utterances')
-    print('saved 04_lippy_vs_tonguey.png')
+    print('saved 04')
 
-# ---- 5. Single closer-look plot of one utterance with envelope ----
-text_pick, emg_path_pick, _ = picks[0]
-emg = np.load(emg_path_pick).astype(np.float32)
-t = np.arange(emg.shape[0]) / SR
-fig, axes = plt.subplots(8, 1, figsize=(13, 9), sharex=True)
-for c in range(8):
-    raw = emg[:, c]
-    # smooth envelope: rectify + 50ms moving avg
-    env = np.convolve(np.abs(raw), np.ones(50)/50, mode='same')
-    axes[c].plot(t, raw, color='lightgray', lw=0.4, label='raw')
-    axes[c].plot(t, env, color='crimson', lw=1.0, label='envelope (50ms)')
-    axes[c].grid(alpha=0.25)
-    axes[c].set_ylabel(f'ch{c}', rotation=0, ha='right', va='center')
-    axes[c].set_yticks([])
-axes[0].legend(loc='upper right', fontsize=8)
-axes[-1].set_xlabel('time (s)')
-fig.suptitle(f'Voiced EMG with rectified envelope — "{text_pick}"', fontsize=11)
-plt.tight_layout(); plt.savefig(f'{OUT}/05_envelope_overlay.png', dpi=110); plt.close()
-print('saved 05_envelope_overlay.png')
-
-print('\nAll plots in', OUT)
+    plot_single_envelope(picks[0][0], picks[0][1], f'{OUT}/05_envelope_overlay.png')
+    print('saved 05')
