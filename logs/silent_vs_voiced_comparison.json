@@ -1,0 +1,24 @@
+{
+  "what": "Per-channel comparison of paired voiced vs silent EMG for the same utterance text",
+  "n_paired_utterances": 1584,
+  "sessions": ["5-4", "5-5", "5-6", "5-8", "5-9", "5-10", "5-11"],
+  "sample_rate_hz": 1000,
+  "n_channels": 8,
+  "amplitude_silent_over_voiced_std": {
+    "ch0": 0.78, "ch1": 0.84, "ch2": 0.71, "ch3": 0.59,
+    "ch4": 0.75, "ch5": 0.84, "ch6": 0.78, "ch7": 0.82
+  },
+  "duration_silent_over_voiced_median": 0.914,
+  "psd_silent_over_voiced_per_band": {
+    "0_30_hz":   {"ch0": 0.77, "ch1": 0.76, "ch2": 0.41, "ch3": 0.41, "ch4": 0.61, "ch5": 1.06, "ch6": 0.76, "ch7": 0.87},
+    "30_150_hz": {"ch0": 0.58, "ch1": 0.81, "ch2": 0.54, "ch3": 0.24, "ch4": 0.55, "ch5": 0.62, "ch6": 0.59, "ch7": 0.63},
+    "150_300_hz":{"ch0": 0.76, "ch1": 0.89, "ch2": 0.65, "ch3": 0.10, "ch4": 0.66, "ch5": 0.78, "ch6": 0.76, "ch7": 0.74}
+  },
+  "cross_channel_corr_diff_mean_abs": 0.054,
+  "paired_raw_pearson_r_median": {
+    "ch0": -0.03, "ch1": 0.01, "ch2": 0.02, "ch3": 0.21,
+    "ch4": -0.04, "ch5": -0.02, "ch6": 0.01, "ch7": 0.01
+  },
+  "script": "experiments/analyze_silent_voiced.py",
+  "plots_dir": "experiments/analysis/silent_vs_voiced/"
+}
