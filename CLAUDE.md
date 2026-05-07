@@ -22,6 +22,13 @@ Always use the anatomical label, not the channel index, in plots / docs / conver
 - ch6 right cheek near nose — `upper_face`
 - ch7 right cheek near ear — `masseter`
 
+## Code style
+- Docstrings: explain what each module / class / function does, briefly. Keep architectural notes (the *why*) when non-obvious.
+- No project-journey commentary in docstrings or comments. Drop "v1", "first experiment", "from our session", "documented above", "for the planned X". Code outlives the conversation that produced it.
+- Filenames and identifiers should describe what the thing is, not when it was written ("voiced_larynx_masked.py", not "v1_encoder.py").
+- Single source of truth for paths and config. No `root=` / `path=` override parameters, no env-var defaults that shadow constants. Hardcode the constant in one place; if it ever needs to change, change it there.
+- Modularize by purpose: when a module covers multiple distinct stages (e.g. data: cleanup, dataset, batching), split into a folder with one file per stage. Each file should hold a meaningful chunk — don't split a 10-line constant into its own file.
+
 ## Workflow
 - Never auto-commit. Stage and wait.
 - Use relative paths or env-configured paths in scripts. Avoid machine-specific absolute paths.

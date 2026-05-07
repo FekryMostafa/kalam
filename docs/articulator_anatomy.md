@@ -45,6 +45,10 @@ Larynx activity ratio is 0.51 and centroid shift is -22.1 Hz. Lips, `upper_face`
 
 [`logs/articulator_test.json`](../logs/articulator_test.json)
 
+## Phonemes
+
+A phoneme is the smallest unit of sound that distinguishes meaning. English has ~40 (CMU dict uses 39, ARPAbet 39, IPA inventories 40–44 depending on dialect). Closed vocabulary: any English word, name, or neologism is a sequence of these ~40 units.
+
 ## Visemes
 
 A viseme is the visual mouth shape produced by one or more phonemes. Phonemes that look identical on the face (e.g. `b` `p` `m` — lips closed) collapse to one viseme. There is no standard inventory: MPEG-4 defines 15 (14 + silence), Disney animation uses ~12, Microsoft Speech defines 22.
