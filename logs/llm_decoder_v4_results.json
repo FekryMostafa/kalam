@@ -1,0 +1,72 @@
+{
+  "what": "LLM decoder stage WER on 10 simulated noisy Gaddy silent test sentences",
+  "session_date": "2026-05-05",
+  "prompt_version": "V4",
+  "prompt_path": "app/decoder_prompt.md",
+  "encoder_simulation": {
+    "model": "voicing-pairs always 50/50; place confusion 25% of consonants; vowel confusion 30% of vowels",
+    "source_script": "sibling repo: experiments/simulate_noisy_encoder.py",
+    "noise_seed": 42
+  },
+  "test_sentences": [
+    "i stopped at the group of people",
+    "where are you going i asked",
+    "the artilleryman jumped down the bank",
+    "i myself heard nothing of that",
+    "remarkable story from woking",
+    "what news from the common said i",
+    "he is not an insurance agent",
+    "we should leave before midnight",
+    "i and my wife stood amazed",
+    "the place was impassable"
+  ],
+  "results": {
+    "gemini_web_v4": {
+      "exact_matches": 10,
+      "n_total": 10,
+      "wer": 0.0,
+      "outputs": [
+        "i stopped at the group of people",
+        "where are you going i asked",
+        "the artilleryman jumped down the bank",
+        "i myself heard nothing of that",
+        "remarkable story from woking",
+        "what news from the common said i",
+        "he is not an insurance agent",
+        "we should leave before midnight",
+        "i and my wife stood amazed",
+        "the place was impassable"
+      ]
+    },
+    "chatgpt_web_v4": {
+      "exact_matches": 7,
+      "n_total": 10,
+      "wer": 0.0702,
+      "errors_by_test": {
+        "3":  "ref=artilleryman gen=artillerman (syllable dropped)",
+        "6":  "ref=said i      gen=city          (word boundary merged)",
+        "10": "ref=impassable  gen=impossible    (common synonym substituted)"
+      }
+    },
+    "chatgpt_web_v3": {"exact_matches": 6, "wer": 0.0877, "note": "general rules, no few-shot"},
+    "chatgpt_web_v1": {"exact_matches": 5, "wer": 0.1404, "note": "test-set words listed in prompt"},
+    "claude_web": {"note": "refused initial V1 prompt as suspected jailbreak; not benchmarked"},
+    "gemma_4_e2b_it_local": {
+      "n_total": 20,
+      "exact_matches": 1,
+      "wer": 0.676,
+      "note": "8-shot ARPAbet primer prompt; sibling repo analysis/text_prompt_v2.json"
+    }
+  },
+  "comparison_baselines": {
+    "gaddy_ctc_raw_silent_2020": 0.395,
+    "gaddy_ctc_kenlm_sibling_repo": 0.328,
+    "ctc_kenlm_gpt4_31b_cleanup_sibling_repo": 0.255,
+    "mona_lisa_published_2024": 0.122
+  },
+  "caveats": [
+    "All Gemini/ChatGPT WER numbers are on a SIMULATED encoder, not real silent EMG.",
+    "Simulation does not include phoneme deletions, insertions, or segmentation errors.",
+    "Real silent-EMG encoder confusion patterns may differ; real WER may be higher."
+  ]
+}
