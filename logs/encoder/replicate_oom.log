@@ -1,0 +1,47 @@
+device=mps
+
+======================================================================
+STATIC CAPACITY  batch=8
+======================================================================
+      T   sec(real)   after_fwd   after_bwd  status
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
+  return torch.ctc_loss(
+   3000         3.0      1.12GiB      1.14GiB  OK
+   5000         5.0      1.16GiB      2.16GiB  OK
+  10000        10.0      3.28GiB      3.29GiB  OK
+  20000        20.0      9.77GiB      9.82GiB  OK
+  31000        31.0     20.67GiB     20.10GiB  OK
+
+======================================================================
+WORST-CASE REAL  batch=8 (longest 8 utterances)
+======================================================================
+Scanning Gaddy lengths...
+top 8 lengths: [54324, 43926, 42246, 41346, 40470, 40392, 40296, 39870]
+global max: 54324 (54.3s)
+  OOM  MPS backend out of memory (MPS allocated: 21.51 GiB, other allocations: 3.65 GiB
+
+
+>>> Comparison run A: random ordering, no length cap, no empty_cache
+
+======================================================================
+SUSTAINED  batch=8  n_steps=200  cap=None  sorted=False  empty_cache_every=None
+======================================================================
+  8653 examples  (max_emg_length=None)
+ step   T_max   pad%    loss   peak(running)    sec
+    0   16698    53%  51.350         7.58GiB   0.7
+   25   13062    57%   3.281        21.80GiB  50.4
+   32   32064                                       OOM MPS backend out of memory (MPS allocated
+CRASHED at step 32
+
+
+>>> Comparison run B: random ordering, 20s cap, periodic empty_cache
+
+======================================================================
+SUSTAINED  batch=8  n_steps=200  cap=20000  sorted=False  empty_cache_every=25
+======================================================================
+  8653 examples  (max_emg_length=20000)
+ step   T_max   pad%    loss   peak(running)    sec
+    0   16698    53%  51.350        14.53GiB   3.8
+   25   13062    57%   3.284        22.57GiB   0.8
+   50   18048    57%   3.304        22.75GiB   0.7
+   75   18588    43%   3.195        22.94GiB   1.4
