@@ -6,12 +6,17 @@ set -e
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
+if ! command -v ruff >/dev/null 2>&1; then
+    echo "[pre-push] ruff not found. run: pip install -r requirements.txt"
+    exit 1
+fi
+
 echo "[pre-push] running ruff check on app/ experiments/encoder/..."
-if ! python3 -m ruff check app/ experiments/encoder/; then
+if ! ruff check app/ experiments/encoder/; then
     echo
     echo "[pre-push] ruff found errors. fix them or run:"
-    echo "    python3 -m ruff check app/ experiments/encoder/ --fix"
-    echo "    python3 -m ruff format app/ experiments/encoder/"
+    echo "    ruff check app/ experiments/encoder/ --fix"
+    echo "    ruff format app/ experiments/encoder/"
     exit 1
 fi
 
