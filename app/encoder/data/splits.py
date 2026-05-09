@@ -26,7 +26,6 @@ from __future__ import annotations
 import json
 import os
 
-
 SPLITS_FILE = os.path.normpath(os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     '..', '..', '..', 'dataset', 'testset_largedev.json',
