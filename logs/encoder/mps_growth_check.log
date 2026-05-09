@@ -1,0 +1,51 @@
+device=mps
+
+======================================================================
+PROBE: 1. FIXED SHAPE  T=10000 every step
+======================================================================
+  baseline:                cur=0.01 GiB  drv=0.02 GiB
+
+  step       T     current      driver    d_cur    d_drv
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
+  return torch.ctc_loss(
+     0   10000     0.05GiB     3.29GiB   +0.00   +0.00
+     5   10000     0.05GiB     3.29GiB   -0.00   +0.00
+    10   10000     0.05GiB     3.29GiB   -0.00   +0.00
+    20   10000     0.05GiB     3.29GiB   -0.00   +0.00
+    30   10000     0.05GiB     3.29GiB   -0.00   +0.00
+    40   10000     0.05GiB     3.29GiB   -0.00   +0.00
+    49   10000     0.05GiB     3.29GiB   -0.00   +0.00
+  total growth from step 0:  current Δ=-0.00 GiB,  driver Δ=+0.00 GiB
+  after teardown:          cur=0.00 GiB  drv=0.18 GiB
+
+======================================================================
+PROBE: 2. VARYING SHAPE  T cycles in {3k, 12k, 7k, 18k, 5k}
+======================================================================
+  baseline:                cur=0.01 GiB  drv=0.20 GiB
+
+  step       T     current      driver    d_cur    d_drv
+     0    3000     0.05GiB     1.32GiB   +0.00   +0.00
+     5    3000     0.05GiB    11.76GiB   -0.00  +10.44
+    10    3000     0.05GiB    11.76GiB   -0.00  +10.44
+    20    3000     0.05GiB    11.81GiB   -0.00  +10.49
+    30    3000     0.05GiB    11.77GiB   -0.00  +10.45
+    40    3000     0.05GiB    11.76GiB   -0.00  +10.44
+    49    5000     0.06GiB    11.76GiB   +0.00  +10.44
+  total growth from step 0:  current Δ=+0.00 GiB,  driver Δ=+10.44 GiB
+  after teardown:          cur=0.00 GiB  drv=0.61 GiB
+
+======================================================================
+PROBE: 3. VARYING + empty_cache() every step
+======================================================================
+  baseline:                cur=0.01 GiB  drv=0.63 GiB
+
+  step       T     current      driver    d_cur    d_drv
+     0    3000     0.05GiB     0.69GiB   +0.00   +0.00
+     5    3000     0.06GiB     0.83GiB   +0.01   +0.14
+    10    3000     0.06GiB     0.83GiB   +0.01   +0.14
+    20    3000     0.06GiB     0.83GiB   +0.01   +0.14
+    30    3000     0.06GiB     0.83GiB   +0.01   +0.14
+    40    3000     0.06GiB     0.83GiB   +0.01   +0.14
+    49    5000     0.06GiB     0.83GiB   +0.01   +0.14
+  total growth from step 0:  current Δ=+0.01 GiB,  driver Δ=+0.14 GiB
+  after teardown:          cur=0.00 GiB  drv=0.75 GiB
