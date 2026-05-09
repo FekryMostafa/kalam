@@ -22,20 +22,17 @@ if _PROJECT_ROOT not in sys.path:
 # CTC has no MPS kernel — fall back to CPU. Must be set before torch import.
 os.environ.setdefault('PYTORCH_ENABLE_MPS_FALLBACK', '1')
 
-from app.encoder.data import GaddyEMGDataset, make_loader  # noqa: E402
-from app.encoder.device import (  # noqa: E402
-    pick_device, setup_env, probe_token_budget, total_memory_gib,
+from app.encoder.data import GaddyEMGDataset, make_loader
+from app.encoder.device import (
+    pick_device,
+    probe_token_budget,
+    setup_env,
+    total_memory_gib,
 )
-from app.encoder.model import ConformerCTC, count_params  # noqa: E402
-from app.encoder.train import TrainConfig, train_ctc  # noqa: E402
-
+from app.encoder.model import ConformerCTC, count_params
+from app.encoder.train import TrainConfig, train_ctc
 
 LARYNX_CH = 3
-
-# Token-budget sampler defaults. min keeps InfoNCE supplied with negatives;
-# max keeps short-utterance batches from running away.
-MIN_BATCH_SIZE = 4
-MAX_BATCH_SIZE = 64
 
 LENGTH_CACHE_PATH = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), '..', '..',
@@ -132,17 +129,21 @@ def main():
     # TokenBudgetPairedSampler: variable-B batches packed under the budget.
     # Pair-aware (paired voiced+silent always co-occur). Voiced-only mode
     # falls back to balanced sampling since pairs need both modes.
+    # InfoNCE needs at least 3 negatives per anchor → batch ≥ 4 when
+    # contrastive is on. With contrastive off there's no minimum.
+    contrast_on = not args.voiced_only
+    min_batch = 4 if contrast_on else 1
+
     if args.voiced_only:
         train_loader = make_loader(
-            train_dataset, batch_size=MIN_BATCH_SIZE, balanced=False,
+            train_dataset, batch_size=min_batch, balanced=False,
             shuffle=True, num_workers=args.num_workers,
         )
     else:
         train_loader = make_loader(
             train_dataset,
             token_budget=token_budget,
-            min_batch_size=MIN_BATCH_SIZE,
-            max_batch_size=MAX_BATCH_SIZE,
+            min_batch_size=min_batch,
             length_cache_path=LENGTH_CACHE_PATH,
             num_workers=args.num_workers,
         )
@@ -163,11 +164,11 @@ def main():
         if len(val_dataset) > 0:
             # Val also uses token-budget sampling — keeps memory bounded
             # without us having to pick a val batch size.
+            # val has no contrastive loss → no minimum batch size needed.
             val_loader = make_loader(
                 val_dataset,
                 token_budget=token_budget,
                 min_batch_size=1,
-                max_batch_size=MAX_BATCH_SIZE,
                 length_cache_path=LENGTH_CACHE_PATH.replace('.json', '_val.json'),
                 num_workers=args.num_workers,
             )

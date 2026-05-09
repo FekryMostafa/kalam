@@ -5,12 +5,18 @@ Equalized: voiced-trained encoder on silent val features extracted from
            silent raw EMG that has been spectrally reshaped to match
            voiced's average PSD per channel.
 """
-import os, sys, json, glob, time
+import glob
+import json
+import os
+import sys
+import time
+
 os.environ['PYTORCH_ENABLE_MPS_FALLBACK'] = '1'
 import numpy as np
 import torch
 import torch.nn.functional as F
 from scipy import signal as sps
+
 sys.path.insert(0, 'src')
 from features import extract_features
 from model import EMGEncoder
@@ -110,6 +116,7 @@ print(f'  loaded {CKPT}')
 
 print('Computing norm stats from voiced training features...'); sys.stdout.flush()
 from dataset import _load_session
+
 voiced_train_feats = []
 for s in TRAIN_PAIRED_SESSIONS:
     for feats, text, _ in _load_session(f'dataset/voiced_parallel_data/{s}'):

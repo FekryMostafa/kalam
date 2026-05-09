@@ -23,12 +23,16 @@ _PROJECT_ROOT = os.path.abspath(os.path.join(_HERE, '..', '..'))
 if _PROJECT_ROOT not in sys.path:
     sys.path.insert(0, _PROJECT_ROOT)
 
-from app.encoder.data.dataset import GaddyEMGDataset  # noqa: E402
-from app.encoder.vocab import (  # noqa: E402
-    ARPABET, COLLAPSED_CLASSES, IDX_TO_CLASS, N_CLASSES,
-    VOICING_PAIRS, text_to_phonemes, phonemes_to_indices,
+from app.encoder.data.dataset import GaddyEMGDataset
+from app.encoder.vocab import (
+    ARPABET,
+    COLLAPSED_CLASSES,
+    IDX_TO_CLASS,
+    N_CLASSES,
+    VOICING_PAIRS,
+    phonemes_to_indices,
+    text_to_phonemes,
 )
-
 
 OUT_PATH = os.path.join(_PROJECT_ROOT, 'logs', 'encoder', 'phoneme_targets.json')
 

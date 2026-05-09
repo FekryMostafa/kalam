@@ -34,16 +34,20 @@ if _PROJECT_ROOT not in sys.path:
 
 os.environ.setdefault('PYTORCH_ENABLE_MPS_FALLBACK', '1')
 
-import numpy as np  # noqa: E402
-import torch  # noqa: E402
-import torch.nn.functional as F  # noqa: E402
+import numpy as np
+import torch
+import torch.nn.functional as F
 
-from app.encoder.data import GaddyEMGDataset, make_loader  # noqa: E402
-from app.encoder.device import (  # noqa: E402
-    pick_device, setup_env, empty_cache, peak_memory_gib, reset_peak_memory,
+from app.encoder.data import GaddyEMGDataset, make_loader
+from app.encoder.device import (
+    empty_cache,
+    peak_memory_gib,
+    pick_device,
+    reset_peak_memory,
+    setup_env,
 )
-from app.encoder.model import ConformerCTC  # noqa: E402
-from app.encoder.vocab import BLANK_IDX  # noqa: E402
+from app.encoder.model import ConformerCTC
+from app.encoder.vocab import BLANK_IDX
 
 
 def _build_model(device):
@@ -53,7 +57,7 @@ def _build_model(device):
 
 def _ctc_step(model, opt, emg, emg_lens, targets, target_lens):
     opt.zero_grad()
-    log_probs, features, out_lens = model(emg, emg_lens)
+    log_probs, _, out_lens = model(emg, emg_lens)
     log_probs_T = log_probs.transpose(0, 1).contiguous()
     loss = F.ctc_loss(
         log_probs_T, targets, out_lens, target_lens,
@@ -140,7 +144,6 @@ def worst_case_real(device, batch_size: int = 8, top_n: int = 8):
         items = [ds[idx] for _, idx in longest[:batch_size]]
         # custom collate (skip _loc_to_examples / pair / frame stuff)
         Tmax = max(it['emg'].shape[0] for it in items)
-        Lmax = max(it['phon_target'].shape[0] for it in items)
         emg = torch.zeros(batch_size, Tmax, 8, dtype=torch.float32, device=device)
         emg_lens = torch.tensor([it['emg'].shape[0] for it in items], dtype=torch.long, device=device)
         targets_flat = torch.cat([it['phon_target'] for it in items]).to(device)
