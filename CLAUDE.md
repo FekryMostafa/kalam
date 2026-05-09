@@ -35,13 +35,21 @@ Always use the anatomical label, not the channel index, in plots / docs / conver
 - Use relative paths or env-configured paths in scripts. Avoid machine-specific absolute paths.
 
 ## Environment
-- All Python deps are pinned in `requirements.txt`. Set up: `python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`.
-- Don't paper over a missing dep with try/except ImportError or hardcoded fallbacks. Add it to `requirements.txt` and `pip install` it.
+- All Python deps are pinned in `requirements.txt`. Use `uv` for fast, reproducible installs.
+- First-time setup:
+  ```
+  uv venv .venv --python 3.13
+  source .venv/bin/activate
+  uv pip install -r requirements.txt
+  git config core.hooksPath hooks
+  ```
+- Don't paper over a missing dep with try/except ImportError or hardcoded fallbacks. Add it to `requirements.txt` and `uv pip install` it.
 
 ## Linting
 - `ruff` is the linter + formatter. Config in `pyproject.toml`.
+- `vulture` catches unused-but-exported code that ruff misses (dead classes/functions imported but never called).
 - Run before pushing: `ruff check app/ experiments/encoder/` (must pass) and `ruff format app/ experiments/encoder/` (auto-fix).
-- A pre-push git hook enforces this. Install it once: `git config core.hooksPath hooks`.
+- The pre-push git hook enforces both ruff + vulture on `app/` and `experiments/encoder/`.
 
 ## Cloud compute discipline
 - Don't waste paid GPU time. Smoke-test on a tiny subset before the real run; only kick off long training once the loop runs end-to-end (forward, backward, val, ckpt save).
