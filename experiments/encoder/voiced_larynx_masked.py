@@ -126,27 +126,16 @@ def main():
         token_budget = args.token_budget
         print(f'Using --token-budget = {token_budget:,}', flush=True)
 
-    # TokenBudgetPairedSampler: variable-B batches packed under the budget.
-    # Pair-aware (paired voiced+silent always co-occur). Voiced-only mode
-    # falls back to balanced sampling since pairs need both modes.
     # InfoNCE needs at least 3 negatives per anchor → batch ≥ 4 when
     # contrastive is on. With contrastive off there's no minimum.
-    contrast_on = not args.voiced_only
-    min_batch = 4 if contrast_on else 1
-
-    if args.voiced_only:
-        train_loader = make_loader(
-            train_dataset, batch_size=min_batch, balanced=False,
-            shuffle=True, num_workers=args.num_workers,
-        )
-    else:
-        train_loader = make_loader(
-            train_dataset,
-            token_budget=token_budget,
-            min_batch_size=min_batch,
-            length_cache_path=LENGTH_CACHE_PATH,
-            num_workers=args.num_workers,
-        )
+    min_batch = 1 if args.voiced_only else 4
+    train_loader = make_loader(
+        train_dataset,
+        token_budget=token_budget,
+        min_batch_size=min_batch,
+        length_cache_path=LENGTH_CACHE_PATH,
+        num_workers=args.num_workers,
+    )
 
     val_loader = None
     if not args.dry_run:
