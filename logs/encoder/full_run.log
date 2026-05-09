@@ -1,0 +1,15 @@
+Building train dataset...
+  train: 8055 examples (1289 silent / 6766 voiced) mask_channels=[3] with_frame_labels=True balanced_sampler=True
+Building val dataset...
+  val: 400 examples (200 silent / 200 voiced)
+Building model...
+  params=3,483,488
+/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
+  return torch.ctc_loss(
+epoch 0 step 10 total=5.340 ctc=3.326 frame_ce=2.862 contrast=1.943 grad=3.75
+epoch 0 step 20 total=5.328 ctc=3.244 frame_ce=3.001 contrast=1.945 grad=3.06
+epoch 0 step 30 total=5.404 ctc=3.446 frame_ce=2.749 contrast=1.944 grad=5.28
+epoch 0 step 40 total=5.347 ctc=3.206 frame_ce=3.115 contrast=1.945 grad=2.91
+epoch 0 step 50 total=5.187 ctc=3.150 frame_ce=2.906 contrast=1.945 grad=0.99
+epoch 0 step 60 total=6.685 ctc=4.714 frame_ce=2.775 contrast=1.944 grad=26.97
+epoch 0 step 70 total=5.424 ctc=3.397 frame_ce=2.888 contrast=1.945 grad=2.35

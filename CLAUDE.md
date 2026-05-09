@@ -31,4 +31,12 @@ Always use the anatomical label, not the channel index, in plots / docs / conver
 
 ## Workflow
 - Never auto-commit. Stage and wait.
+- Never build before sign-off. Propose first; wait for an explicit go-ahead before writing or modifying code. "Auto mode" applies to low-risk plumbing only — design choices need approval.
 - Use relative paths or env-configured paths in scripts. Avoid machine-specific absolute paths.
+
+## Cloud compute discipline
+- Don't waste paid GPU time. Smoke-test on a tiny subset before the real run; only kick off long training once the loop runs end-to-end (forward, backward, val, ckpt save).
+- Measure batch size on the actual GPU with real utterance lengths. No guessing.
+- Persistent-volume checkpoints only. Save best on val improvement, latest every N steps. Pull artifacts back to laptop periodically so a dead pod ≠ lost work.
+- Stop the pod the moment training finishes. Idle GPU is wasted money.
+- Don't run speculative experiments in parallel on rented compute. One thing at a time.

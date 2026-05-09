@@ -1,0 +1,1997 @@
+{
+  "summary": {
+    "n_checked": 10,
+    "n_aligned_cleanly": 10,
+    "pass_ratio": 1.0,
+    "pass_threshold": 0.9,
+    "passed": true,
+    "audio_clips_per_class": {
+      "AA": 5,
+      "AE": 5,
+      "AH": 5,
+      "AO": 5,
+      "AW": 3,
+      "AY": 5,
+      "B": 5,
+      "CH": 1,
+      "D": 5,
+      "DH": 5,
+      "EH": 5,
+      "ER": 5,
+      "EY": 5,
+      "F": 5,
+      "G": 5,
+      "HH": 5,
+      "IH": 5,
+      "IY": 5,
+      "JH": 2,
+      "K": 5,
+      "L": 5,
+      "M": 5,
+      "N": 5,
+      "NG": 5,
+      "OW": 5,
+      "P": 5,
+      "R": 5,
+      "S": 5,
+      "SH": 5,
+      "T": 5,
+      "TH": 5,
+      "UH": 5,
+      "UW": 5,
+      "V": 5,
+      "W": 5,
+      "Y": 5,
+      "Z": 5
+    },
+    "audio_output_dir": "/Users/fekrymostafa/Desktop/kalam/Project kalam/cache/encoder/align_audio"
+  },
+  "per_utterance": [
+    {
+      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/5-2/554_audio_clean.flac",
+      "text": "I could not live there longer without some advice.",
+      "n_words_text": 9,
+      "n_words_aligned": 9,
+      "aligned_cleanly": true,
+      "spans_collapsed_to_zero": 0,
+      "mean_word_duration_frac": 0.0653,
+      "min_word_duration_frac": 0.0103,
+      "max_word_duration_frac": 0.2113,
+      "words": [
+        {
+          "text_word": "I",
+          "aligned_word": "I",
+          "start_frac": 0.1907,
+          "end_frac": 0.201,
+          "duration_frac": 0.0103,
+          "audio_rms": 0.102608
+        },
+        {
+          "text_word": "COULD",
+          "aligned_word": "COUULD",
+          "start_frac": 0.2113,
+          "end_frac": 0.2423,
+          "duration_frac": 0.0309,
+          "audio_rms": 0.090285
+        },
+        {
+          "text_word": "NOT",
+          "aligned_word": "NOOTT",
+          "start_frac": 0.268,
+          "end_frac": 0.3144,
+          "duration_frac": 0.0464,
+          "audio_rms": 0.097995
+        },
+        {
+          "text_word": "LIVE",
+          "aligned_word": "LLIVVE",
+          "start_frac": 0.3557,
+          "end_frac": 0.4021,
+          "duration_frac": 0.0464,
+          "audio_rms": 0.138747
+        },
+        {
+          "text_word": "THERE",
+          "aligned_word": "THEERREE",
+          "start_frac": 0.4227,
+          "end_frac": 0.4794,
+          "duration_frac": 0.0567,
+          "audio_rms": 0.146315
+        },
+        {
+          "text_word": "LONGER",
+          "aligned_word": "LONNGEER",
+          "start_frac": 0.5361,
+          "end_frac": 0.6186,
+          "duration_frac": 0.0825,
+          "audio_rms": 0.117881
+        },
+        {
+          "text_word": "WITHOUT",
+          "aligned_word": "WITHHOUT",
+          "start_frac": 0.6598,
+          "end_frac": 0.7268,
+          "duration_frac": 0.067,
+          "audio_rms": 0.13135
+        },
+        {
+          "text_word": "SOME",
+          "aligned_word": "SOMEE",
+          "start_frac": 0.7423,
+          "end_frac": 0.7784,
+          "duration_frac": 0.0361,
+          "audio_rms": 0.12903
+        },
+        {
+          "text_word": "ADVICE",
+          "aligned_word": "ADVICEEEEE",
+          "start_frac": 0.7887,
+          "end_frac": 1.0,
+          "duration_frac": 0.2113,
+          "audio_rms": 0.033843
+        }
+      ]
+    },
+    {
+      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-24/525_audio_clean.flac",
+      "text": "\u201cIt may give him a sleepless night.",
+      "n_words_text": 7,
+      "n_words_aligned": 7,
+      "aligned_cleanly": true,
+      "spans_collapsed_to_zero": 0,
+      "mean_word_duration_frac": 0.0718,
+      "min_word_duration_frac": 0.0117,
+      "max_word_duration_frac": 0.2047,
+      "words": [
+        {
+          "text_word": "IT",
+          "aligned_word": "IT",
+          "start_frac": 0.3275,
+          "end_frac": 0.345,
+          "duration_frac": 0.0175,
+          "audio_rms": 0.112581
+        },
+        {
+          "text_word": "MAY",
+          "aligned_word": "MAYY",
+          "start_frac": 0.3567,
+          "end_frac": 0.3977,
+          "duration_frac": 0.0409,
+          "audio_rms": 0.156051
+        },
+        {
+          "text_word": "GIVE",
+          "aligned_word": "GIVEE",
+          "start_frac": 0.4211,
+          "end_frac": 0.4737,
+          "duration_frac": 0.0526,
+          "audio_rms": 0.137898
+        },
+        {
+          "text_word": "HIM",
+          "aligned_word": "HHIM",
+          "start_frac": 0.4912,
+          "end_frac": 0.5322,
+          "duration_frac": 0.0409,
+          "audio_rms": 0.100447
+        },
+        {
+          "text_word": "A",
+          "aligned_word": "A",
+          "start_frac": 0.6082,
+          "end_frac": 0.6199,
+          "duration_frac": 0.0117,
+          "audio_rms": 0.041872
+        },
+        {
+          "text_word": "SLEEPLESS",
+          "aligned_word": "SSLEEPLLESSSS",
+          "start_frac": 0.6374,
+          "end_frac": 0.7719,
+          "duration_frac": 0.1345,
+          "audio_rms": 0.084302
+        },
+        {
+          "text_word": "NIGHT",
+          "aligned_word": "NIGHTT",
+          "start_frac": 0.7953,
+          "end_frac": 1.0,
+          "duration_frac": 0.2047,
+          "audio_rms": 0.020021
+        }
+      ]
+    },
+    {
+      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-30/388_audio_clean.flac",
+      "text": "\u201cBut what is the good of all these vague theories,\u201d cried the banker, impatiently, \u201cwhen I have told you that I saw Arthur with the coronet in his hands?\u201d",
+      "n_words_text": 29,
+      "n_words_aligned": 29,
+      "aligned_cleanly": true,
+      "spans_collapsed_to_zero": 0,
+      "mean_word_duration_frac": 0.0197,
+      "min_word_duration_frac": 0.0037,
+      "max_word_duration_frac": 0.1316,
+      "words": [
+        {
+          "text_word": "BUT",
+          "aligned_word": "BUTT",
+          "start_frac": 0.0969,
+          "end_frac": 0.1079,
+          "duration_frac": 0.011,
+          "audio_rms": 0.098961
+        },
+        {
+          "text_word": "WHAT",
+          "aligned_word": "WHHAT",
+          "start_frac": 0.1152,
+          "end_frac": 0.1298,
+          "duration_frac": 0.0146,
+          "audio_rms": 0.149737
+        },
+        {
+          "text_word": "IS",
+          "aligned_word": "ISS",
+          "start_frac": 0.1389,
+          "end_frac": 0.1463,
+          "duration_frac": 0.0073,
+          "audio_rms": 0.118255
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.1499,
+          "end_frac": 0.1554,
+          "duration_frac": 0.0055,
+          "audio_rms": 0.143142
+        },
+        {
+          "text_word": "GOOD",
+          "aligned_word": "GOOOOD",
+          "start_frac": 0.1627,
+          "end_frac": 0.1828,
+          "duration_frac": 0.0201,
+          "audio_rms": 0.154201
+        },
+        {
+          "text_word": "OF",
+          "aligned_word": "OF",
+          "start_frac": 0.2102,
+          "end_frac": 0.2139,
+          "duration_frac": 0.0037,
+          "audio_rms": 0.081666
+        },
+        {
+          "text_word": "ALL",
+          "aligned_word": "ALLL",
+          "start_frac": 0.234,
+          "end_frac": 0.245,
+          "duration_frac": 0.011,
+          "audio_rms": 0.18358
+        },
+        {
+          "text_word": "THESE",
+          "aligned_word": "THESEE",
+          "start_frac": 0.2505,
+          "end_frac": 0.2633,
+          "duration_frac": 0.0128,
+          "audio_rms": 0.197829
+        },
+        {
+          "text_word": "VAGUE",
+          "aligned_word": "VAGUUE",
+          "start_frac": 0.2706,
+          "end_frac": 0.2925,
+          "duration_frac": 0.0219,
+          "audio_rms": 0.082061
+        },
+        {
+          "text_word": "THEORIES",
+          "aligned_word": "TTHEEOORRIESS",
+          "start_frac": 0.2962,
+          "end_frac": 0.3309,
+          "duration_frac": 0.0347,
+          "audio_rms": 0.090471
+        },
+        {
+          "text_word": "CRIED",
+          "aligned_word": "CRRIEDD",
+          "start_frac": 0.3492,
+          "end_frac": 0.3656,
+          "duration_frac": 0.0165,
+          "audio_rms": 0.082776
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.3693,
+          "end_frac": 0.3748,
+          "duration_frac": 0.0055,
+          "audio_rms": 0.047738
+        },
+        {
+          "text_word": "BANKER",
+          "aligned_word": "BANNKERR",
+          "start_frac": 0.3784,
+          "end_frac": 0.4059,
+          "duration_frac": 0.0274,
+          "audio_rms": 0.106775
+        },
+        {
+          "text_word": "IMPATIENTLY",
+          "aligned_word": "IMPAATIENTLLY",
+          "start_frac": 0.4241,
+          "end_frac": 0.4771,
+          "duration_frac": 0.053,
+          "audio_rms": 0.085828
+        },
+        {
+          "text_word": "WHEN",
+          "aligned_word": "WHEN",
+          "start_frac": 0.5558,
+          "end_frac": 0.5667,
+          "duration_frac": 0.011,
+          "audio_rms": 0.113284
+        },
+        {
+          "text_word": "I",
+          "aligned_word": "I",
+          "start_frac": 0.5704,
+          "end_frac": 0.574,
+          "duration_frac": 0.0037,
+          "audio_rms": 0.263036
+        },
+        {
+          "text_word": "HAVE",
+          "aligned_word": "HAVE",
+          "start_frac": 0.5795,
+          "end_frac": 0.5905,
+          "duration_frac": 0.011,
+          "audio_rms": 0.122091
+        },
+        {
+          "text_word": "TOLD",
+          "aligned_word": "TTOLDD",
+          "start_frac": 0.5941,
+          "end_frac": 0.6161,
+          "duration_frac": 0.0219,
+          "audio_rms": 0.198464
+        },
+        {
+          "text_word": "YOU",
+          "aligned_word": "YOU",
+          "start_frac": 0.6216,
+          "end_frac": 0.6325,
+          "duration_frac": 0.011,
+          "audio_rms": 0.069138
+        },
+        {
+          "text_word": "THAT",
+          "aligned_word": "THHAT",
+          "start_frac": 0.6581,
+          "end_frac": 0.6691,
+          "duration_frac": 0.011,
+          "audio_rms": 0.05141
+        },
+        {
+          "text_word": "I",
+          "aligned_word": "II",
+          "start_frac": 0.6746,
+          "end_frac": 0.6782,
+          "duration_frac": 0.0037,
+          "audio_rms": 0.123328
+        },
+        {
+          "text_word": "SAW",
+          "aligned_word": "SSAW",
+          "start_frac": 0.6874,
+          "end_frac": 0.7075,
+          "duration_frac": 0.0201,
+          "audio_rms": 0.124548
+        },
+        {
+          "text_word": "ARTHUR",
+          "aligned_word": "AARRTHHURRR",
+          "start_frac": 0.7258,
+          "end_frac": 0.755,
+          "duration_frac": 0.0293,
+          "audio_rms": 0.105247
+        },
+        {
+          "text_word": "WITH",
+          "aligned_word": "WITHH",
+          "start_frac": 0.7697,
+          "end_frac": 0.7806,
+          "duration_frac": 0.011,
+          "audio_rms": 0.067884
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.7843,
+          "end_frac": 0.7898,
+          "duration_frac": 0.0055,
+          "audio_rms": 0.073049
+        },
+        {
+          "text_word": "CORONET",
+          "aligned_word": "CORRRONNET",
+          "start_frac": 0.7971,
+          "end_frac": 0.841,
+          "duration_frac": 0.0439,
+          "audio_rms": 0.112107
+        },
+        {
+          "text_word": "IN",
+          "aligned_word": "IN",
+          "start_frac": 0.8464,
+          "end_frac": 0.8501,
+          "duration_frac": 0.0037,
+          "audio_rms": 0.122985
+        },
+        {
+          "text_word": "HIS",
+          "aligned_word": "HISS",
+          "start_frac": 0.8556,
+          "end_frac": 0.8647,
+          "duration_frac": 0.0091,
+          "audio_rms": 0.052047
+        },
+        {
+          "text_word": "HANDS",
+          "aligned_word": "HANNDDS",
+          "start_frac": 0.8684,
+          "end_frac": 1.0,
+          "duration_frac": 0.1316,
+          "audio_rms": 0.03802
+        }
+      ]
+    },
+    {
+      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-25/334_audio_clean.flac",
+      "text": "Mrs. St. Clair has most kindly put two rooms at my disposal, and you may rest assured that she will have nothing but a welcome for my friend and colleague.",
+      "n_words_text": 30,
+      "n_words_aligned": 30,
+      "aligned_cleanly": true,
+      "spans_collapsed_to_zero": 0,
+      "mean_word_duration_frac": 0.019,
+      "min_word_duration_frac": 0.0017,
+      "max_word_duration_frac": 0.0979,
+      "words": [
+        {
+          "text_word": "MRS",
+          "aligned_word": "MMRSSSSSS",
+          "start_frac": 0.0944,
+          "end_frac": 0.1171,
+          "duration_frac": 0.0227,
+          "audio_rms": 0.136315
+        },
+        {
+          "text_word": "ST",
+          "aligned_word": "SST",
+          "start_frac": 0.1224,
+          "end_frac": 0.1399,
+          "duration_frac": 0.0175,
+          "audio_rms": 0.080738
+        },
+        {
+          "text_word": "CLAIR",
+          "aligned_word": "CLAAIIRRR",
+          "start_frac": 0.1469,
+          "end_frac": 0.1731,
+          "duration_frac": 0.0262,
+          "audio_rms": 0.071221
+        },
+        {
+          "text_word": "HAS",
+          "aligned_word": "HHAS",
+          "start_frac": 0.201,
+          "end_frac": 0.2115,
+          "duration_frac": 0.0105,
+          "audio_rms": 0.090611
+        },
+        {
+          "text_word": "MOST",
+          "aligned_word": "MOST",
+          "start_frac": 0.215,
+          "end_frac": 0.229,
+          "duration_frac": 0.014,
+          "audio_rms": 0.134043
+        },
+        {
+          "text_word": "KINDLY",
+          "aligned_word": "KKINNDDLLY",
+          "start_frac": 0.2343,
+          "end_frac": 0.2692,
+          "duration_frac": 0.035,
+          "audio_rms": 0.088117
+        },
+        {
+          "text_word": "PUT",
+          "aligned_word": "PUTT",
+          "start_frac": 0.278,
+          "end_frac": 0.2937,
+          "duration_frac": 0.0157,
+          "audio_rms": 0.135105
+        },
+        {
+          "text_word": "TWO",
+          "aligned_word": "TTWO",
+          "start_frac": 0.3112,
+          "end_frac": 0.3252,
+          "duration_frac": 0.014,
+          "audio_rms": 0.079667
+        },
+        {
+          "text_word": "ROOMS",
+          "aligned_word": "RROOOOMMS",
+          "start_frac": 0.3322,
+          "end_frac": 0.3549,
+          "duration_frac": 0.0227,
+          "audio_rms": 0.207528
+        },
+        {
+          "text_word": "AT",
+          "aligned_word": "AT",
+          "start_frac": 0.3619,
+          "end_frac": 0.3654,
+          "duration_frac": 0.0035,
+          "audio_rms": 0.044772
+        },
+        {
+          "text_word": "MY",
+          "aligned_word": "MY",
+          "start_frac": 0.3689,
+          "end_frac": 0.3776,
+          "duration_frac": 0.0087,
+          "audio_rms": 0.073477
+        },
+        {
+          "text_word": "DISPOSAL",
+          "aligned_word": "DDISSPOSSAALL",
+          "start_frac": 0.3811,
+          "end_frac": 0.4231,
+          "duration_frac": 0.042,
+          "audio_rms": 0.04397
+        },
+        {
+          "text_word": "AND",
+          "aligned_word": "ANDD",
+          "start_frac": 0.4825,
+          "end_frac": 0.4895,
+          "duration_frac": 0.007,
+          "audio_rms": 0.120584
+        },
+        {
+          "text_word": "YOU",
+          "aligned_word": "YOU",
+          "start_frac": 0.4948,
+          "end_frac": 0.5017,
+          "duration_frac": 0.007,
+          "audio_rms": 0.178806
+        },
+        {
+          "text_word": "MAY",
+          "aligned_word": "MAY",
+          "start_frac": 0.5052,
+          "end_frac": 0.5157,
+          "duration_frac": 0.0105,
+          "audio_rms": 0.148889
+        },
+        {
+          "text_word": "REST",
+          "aligned_word": "RRESSTT",
+          "start_frac": 0.5227,
+          "end_frac": 0.5472,
+          "duration_frac": 0.0245,
+          "audio_rms": 0.091814
+        },
+        {
+          "text_word": "ASSURED",
+          "aligned_word": "AASSUURREDD",
+          "start_frac": 0.5559,
+          "end_frac": 0.5892,
+          "duration_frac": 0.0332,
+          "audio_rms": 0.081512
+        },
+        {
+          "text_word": "THAT",
+          "aligned_word": "THAT",
+          "start_frac": 0.6364,
+          "end_frac": 0.6469,
+          "duration_frac": 0.0105,
+          "audio_rms": 0.038045
+        },
+        {
+          "text_word": "SHE",
+          "aligned_word": "SSHHE",
+          "start_frac": 0.6591,
+          "end_frac": 0.6783,
+          "duration_frac": 0.0192,
+          "audio_rms": 0.084612
+        },
+        {
+          "text_word": "WILL",
+          "aligned_word": "WILL",
+          "start_frac": 0.6888,
+          "end_frac": 0.7028,
+          "duration_frac": 0.014,
+          "audio_rms": 0.067309
+        },
+        {
+          "text_word": "HAVE",
+          "aligned_word": "HHAVE",
+          "start_frac": 0.7063,
+          "end_frac": 0.7168,
+          "duration_frac": 0.0105,
+          "audio_rms": 0.100644
+        },
+        {
+          "text_word": "NOTHING",
+          "aligned_word": "NOTHING",
+          "start_frac": 0.7238,
+          "end_frac": 0.7448,
+          "duration_frac": 0.021,
+          "audio_rms": 0.100494
+        },
+        {
+          "text_word": "BUT",
+          "aligned_word": "BUTT",
+          "start_frac": 0.7587,
+          "end_frac": 0.7675,
+          "duration_frac": 0.0087,
+          "audio_rms": 0.101548
+        },
+        {
+          "text_word": "A",
+          "aligned_word": "A",
+          "start_frac": 0.7727,
+          "end_frac": 0.7745,
+          "duration_frac": 0.0017,
+          "audio_rms": 0.056328
+        },
+        {
+          "text_word": "WELCOME",
+          "aligned_word": "WELLCOMME",
+          "start_frac": 0.7797,
+          "end_frac": 0.8059,
+          "duration_frac": 0.0262,
+          "audio_rms": 0.105707
+        },
+        {
+          "text_word": "FOR",
+          "aligned_word": "FOR",
+          "start_frac": 0.8287,
+          "end_frac": 0.8374,
+          "duration_frac": 0.0087,
+          "audio_rms": 0.049867
+        },
+        {
+          "text_word": "MY",
+          "aligned_word": "MY",
+          "start_frac": 0.8427,
+          "end_frac": 0.8514,
+          "duration_frac": 0.0087,
+          "audio_rms": 0.057387
+        },
+        {
+          "text_word": "FRIEND",
+          "aligned_word": "FRRIIEND",
+          "start_frac": 0.8584,
+          "end_frac": 0.8794,
+          "duration_frac": 0.021,
+          "audio_rms": 0.11209
+        },
+        {
+          "text_word": "AND",
+          "aligned_word": "ANDD",
+          "start_frac": 0.8899,
+          "end_frac": 0.8969,
+          "duration_frac": 0.007,
+          "audio_rms": 0.115317
+        },
+        {
+          "text_word": "COLLEAGUE",
+          "aligned_word": "COLLLEEAGGUUEE",
+          "start_frac": 0.9021,
+          "end_frac": 1.0,
+          "duration_frac": 0.0979,
+          "audio_rms": 0.021578
+        }
+      ]
+    },
+    {
+      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/voiced_parallel_data/5-11/60_audio_clean.flac",
+      "text": "At the same time four of their fighting machines, similarly armed with tubes, crossed the river, and two of them, black against the western sky, came into sight of myself and the curate as we hurried wearily and painfully along the road that runs northward out of Halliford.",
+      "n_words_text": 48,
+      "n_words_aligned": 48,
+      "aligned_cleanly": true,
+      "spans_collapsed_to_zero": 0,
+      "mean_word_duration_frac": 0.0104,
+      "min_word_duration_frac": 0.0019,
+      "max_word_duration_frac": 0.0599,
+      "words": [
+        {
+          "text_word": "AT",
+          "aligned_word": "ATT",
+          "start_frac": 0.0665,
+          "end_frac": 0.0694,
+          "duration_frac": 0.0029,
+          "audio_rms": 0.026629
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.0713,
+          "end_frac": 0.0751,
+          "duration_frac": 0.0038,
+          "audio_rms": 0.051832
+        },
+        {
+          "text_word": "SAME",
+          "aligned_word": "SAMMEE",
+          "start_frac": 0.077,
+          "end_frac": 0.0865,
+          "duration_frac": 0.0095,
+          "audio_rms": 0.103402
+        },
+        {
+          "text_word": "TIME",
+          "aligned_word": "TIMEE",
+          "start_frac": 0.0903,
+          "end_frac": 0.1036,
+          "duration_frac": 0.0133,
+          "audio_rms": 0.0797
+        },
+        {
+          "text_word": "FOUR",
+          "aligned_word": "FFOURRR",
+          "start_frac": 0.1207,
+          "end_frac": 0.134,
+          "duration_frac": 0.0133,
+          "audio_rms": 0.119383
+        },
+        {
+          "text_word": "OF",
+          "aligned_word": "OF",
+          "start_frac": 0.1397,
+          "end_frac": 0.1416,
+          "duration_frac": 0.0019,
+          "audio_rms": 0.11446
+        },
+        {
+          "text_word": "THEIR",
+          "aligned_word": "THEIRR",
+          "start_frac": 0.1445,
+          "end_frac": 0.1559,
+          "duration_frac": 0.0114,
+          "audio_rms": 0.102748
+        },
+        {
+          "text_word": "FIGHTING",
+          "aligned_word": "FIGHHTINGG",
+          "start_frac": 0.1568,
+          "end_frac": 0.1692,
+          "duration_frac": 0.0124,
+          "audio_rms": 0.097795
+        },
+        {
+          "text_word": "MACHINES",
+          "aligned_word": "MAACHHHIINNEEESS",
+          "start_frac": 0.1711,
+          "end_frac": 0.193,
+          "duration_frac": 0.0219,
+          "audio_rms": 0.071113
+        },
+        {
+          "text_word": "SIMILARLY",
+          "aligned_word": "SIMMILLARRLLYY",
+          "start_frac": 0.2329,
+          "end_frac": 0.2548,
+          "duration_frac": 0.0219,
+          "audio_rms": 0.113611
+        },
+        {
+          "text_word": "ARMED",
+          "aligned_word": "ARMED",
+          "start_frac": 0.2633,
+          "end_frac": 0.2709,
+          "duration_frac": 0.0076,
+          "audio_rms": 0.164709
+        },
+        {
+          "text_word": "WITH",
+          "aligned_word": "WWITH",
+          "start_frac": 0.2719,
+          "end_frac": 0.2766,
+          "duration_frac": 0.0048,
+          "audio_rms": 0.057398
+        },
+        {
+          "text_word": "TUBES",
+          "aligned_word": "TUBEEESS",
+          "start_frac": 0.2804,
+          "end_frac": 0.2975,
+          "duration_frac": 0.0171,
+          "audio_rms": 0.100803
+        },
+        {
+          "text_word": "CROSSED",
+          "aligned_word": "CROSSED",
+          "start_frac": 0.3184,
+          "end_frac": 0.3308,
+          "duration_frac": 0.0124,
+          "audio_rms": 0.070786
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.3327,
+          "end_frac": 0.3356,
+          "duration_frac": 0.0029,
+          "audio_rms": 0.013355
+        },
+        {
+          "text_word": "RIVER",
+          "aligned_word": "RIVERR",
+          "start_frac": 0.3384,
+          "end_frac": 0.3508,
+          "duration_frac": 0.0124,
+          "audio_rms": 0.103928
+        },
+        {
+          "text_word": "AND",
+          "aligned_word": "ANDD",
+          "start_frac": 0.384,
+          "end_frac": 0.3878,
+          "duration_frac": 0.0038,
+          "audio_rms": 0.113213
+        },
+        {
+          "text_word": "TWO",
+          "aligned_word": "TWWO",
+          "start_frac": 0.3945,
+          "end_frac": 0.4011,
+          "duration_frac": 0.0067,
+          "audio_rms": 0.106899
+        },
+        {
+          "text_word": "OF",
+          "aligned_word": "OOF",
+          "start_frac": 0.403,
+          "end_frac": 0.4059,
+          "duration_frac": 0.0029,
+          "audio_rms": 0.104687
+        },
+        {
+          "text_word": "THEM",
+          "aligned_word": "TTHEM",
+          "start_frac": 0.4078,
+          "end_frac": 0.4144,
+          "duration_frac": 0.0067,
+          "audio_rms": 0.077059
+        },
+        {
+          "text_word": "BLACK",
+          "aligned_word": "BLLACK",
+          "start_frac": 0.4487,
+          "end_frac": 0.4601,
+          "duration_frac": 0.0114,
+          "audio_rms": 0.107382
+        },
+        {
+          "text_word": "AGAINST",
+          "aligned_word": "AGAAINST",
+          "start_frac": 0.4639,
+          "end_frac": 0.4743,
+          "duration_frac": 0.0105,
+          "audio_rms": 0.132035
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.4762,
+          "end_frac": 0.4791,
+          "duration_frac": 0.0029,
+          "audio_rms": 0.068781
+        },
+        {
+          "text_word": "WESTERN",
+          "aligned_word": "WWESSTERRN",
+          "start_frac": 0.481,
+          "end_frac": 0.4971,
+          "duration_frac": 0.0162,
+          "audio_rms": 0.097757
+        },
+        {
+          "text_word": "SKY",
+          "aligned_word": "SKKY",
+          "start_frac": 0.5,
+          "end_frac": 0.5152,
+          "duration_frac": 0.0152,
+          "audio_rms": 0.074503
+        },
+        {
+          "text_word": "CAME",
+          "aligned_word": "CCAME",
+          "start_frac": 0.5428,
+          "end_frac": 0.5504,
+          "duration_frac": 0.0076,
+          "audio_rms": 0.082432
+        },
+        {
+          "text_word": "INTO",
+          "aligned_word": "INTO",
+          "start_frac": 0.5532,
+          "end_frac": 0.5599,
+          "duration_frac": 0.0067,
+          "audio_rms": 0.098765
+        },
+        {
+          "text_word": "SIGHT",
+          "aligned_word": "SIGGHTT",
+          "start_frac": 0.5646,
+          "end_frac": 0.5751,
+          "duration_frac": 0.0105,
+          "audio_rms": 0.071969
+        },
+        {
+          "text_word": "OF",
+          "aligned_word": "OF",
+          "start_frac": 0.5894,
+          "end_frac": 0.5922,
+          "duration_frac": 0.0029,
+          "audio_rms": 0.07686
+        },
+        {
+          "text_word": "MYSELF",
+          "aligned_word": "MYSELF",
+          "start_frac": 0.5951,
+          "end_frac": 0.615,
+          "duration_frac": 0.02,
+          "audio_rms": 0.119539
+        },
+        {
+          "text_word": "AND",
+          "aligned_word": "AND",
+          "start_frac": 0.6426,
+          "end_frac": 0.6454,
+          "duration_frac": 0.0029,
+          "audio_rms": 0.077621
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.6473,
+          "end_frac": 0.6502,
+          "duration_frac": 0.0029,
+          "audio_rms": 0.113092
+        },
+        {
+          "text_word": "CURATE",
+          "aligned_word": "CUURRATTE",
+          "start_frac": 0.653,
+          "end_frac": 0.6673,
+          "duration_frac": 0.0143,
+          "audio_rms": 0.074371
+        },
+        {
+          "text_word": "AS",
+          "aligned_word": "AS",
+          "start_frac": 0.7006,
+          "end_frac": 0.7034,
+          "duration_frac": 0.0029,
+          "audio_rms": 0.112628
+        },
+        {
+          "text_word": "WE",
+          "aligned_word": "WE",
+          "start_frac": 0.7053,
+          "end_frac": 0.7101,
+          "duration_frac": 0.0048,
+          "audio_rms": 0.082908
+        },
+        {
+          "text_word": "HURRIED",
+          "aligned_word": "HHURRRIEED",
+          "start_frac": 0.7148,
+          "end_frac": 0.73,
+          "duration_frac": 0.0152,
+          "audio_rms": 0.135095
+        },
+        {
+          "text_word": "WEARILY",
+          "aligned_word": "WEAARIILLYY",
+          "start_frac": 0.75,
+          "end_frac": 0.7681,
+          "duration_frac": 0.0181,
+          "audio_rms": 0.128195
+        },
+        {
+          "text_word": "AND",
+          "aligned_word": "ANDD",
+          "start_frac": 0.7795,
+          "end_frac": 0.7833,
+          "duration_frac": 0.0038,
+          "audio_rms": 0.073911
+        },
+        {
+          "text_word": "PAINFULLY",
+          "aligned_word": "PAINNFULLLLY",
+          "start_frac": 0.7871,
+          "end_frac": 0.808,
+          "duration_frac": 0.0209,
+          "audio_rms": 0.079514
+        },
+        {
+          "text_word": "ALONG",
+          "aligned_word": "ALLOONGG",
+          "start_frac": 0.826,
+          "end_frac": 0.8356,
+          "duration_frac": 0.0095,
+          "audio_rms": 0.099322
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THHE",
+          "start_frac": 0.8365,
+          "end_frac": 0.8403,
+          "duration_frac": 0.0038,
+          "audio_rms": 0.109225
+        },
+        {
+          "text_word": "ROAD",
+          "aligned_word": "ROOADD",
+          "start_frac": 0.8432,
+          "end_frac": 0.8527,
+          "duration_frac": 0.0095,
+          "audio_rms": 0.087709
+        },
+        {
+          "text_word": "THAT",
+          "aligned_word": "THAT",
+          "start_frac": 0.8698,
+          "end_frac": 0.8745,
+          "duration_frac": 0.0048,
+          "audio_rms": 0.042137
+        },
+        {
+          "text_word": "RUNS",
+          "aligned_word": "RUNS",
+          "start_frac": 0.8764,
+          "end_frac": 0.8831,
+          "duration_frac": 0.0067,
+          "audio_rms": 0.107646
+        },
+        {
+          "text_word": "NORTHWARD",
+          "aligned_word": "NNOORTHHWWARRD",
+          "start_frac": 0.8878,
+          "end_frac": 0.9078,
+          "duration_frac": 0.02,
+          "audio_rms": 0.107821
+        },
+        {
+          "text_word": "OUT",
+          "aligned_word": "OUT",
+          "start_frac": 0.9297,
+          "end_frac": 0.9344,
+          "duration_frac": 0.0048,
+          "audio_rms": 0.138347
+        },
+        {
+          "text_word": "OF",
+          "aligned_word": "OF",
+          "start_frac": 0.9363,
+          "end_frac": 0.9382,
+          "duration_frac": 0.0019,
+          "audio_rms": 0.059192
+        },
+        {
+          "text_word": "HALLIFORD",
+          "aligned_word": "HALLLIFORRD",
+          "start_frac": 0.9401,
+          "end_frac": 1.0,
+          "duration_frac": 0.0599,
+          "audio_rms": 0.048478
+        }
+      ]
+    },
+    {
+      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-23/18_audio_clean.flac",
+      "text": "\u201cOh, Anstruther would do your work for you.",
+      "n_words_text": 8,
+      "n_words_aligned": 8,
+      "aligned_cleanly": true,
+      "spans_collapsed_to_zero": 0,
+      "mean_word_duration_frac": 0.0593,
+      "min_word_duration_frac": 0.0126,
+      "max_word_duration_frac": 0.2327,
+      "words": [
+        {
+          "text_word": "OH",
+          "aligned_word": "OHH",
+          "start_frac": 0.1887,
+          "end_frac": 0.2013,
+          "duration_frac": 0.0126,
+          "audio_rms": 0.088194
+        },
+        {
+          "text_word": "ANSTRUTHER",
+          "aligned_word": "ANNSTRRUTHERR",
+          "start_frac": 0.4214,
+          "end_frac": 0.5283,
+          "duration_frac": 0.1069,
+          "audio_rms": 0.119617
+        },
+        {
+          "text_word": "WOULD",
+          "aligned_word": "WOULD",
+          "start_frac": 0.6038,
+          "end_frac": 0.6321,
+          "duration_frac": 0.0283,
+          "audio_rms": 0.065821
+        },
+        {
+          "text_word": "DO",
+          "aligned_word": "DO",
+          "start_frac": 0.6384,
+          "end_frac": 0.6541,
+          "duration_frac": 0.0157,
+          "audio_rms": 0.20248
+        },
+        {
+          "text_word": "YOUR",
+          "aligned_word": "YOURR",
+          "start_frac": 0.6635,
+          "end_frac": 0.6855,
+          "duration_frac": 0.022,
+          "audio_rms": 0.171101
+        },
+        {
+          "text_word": "WORK",
+          "aligned_word": "WORKK",
+          "start_frac": 0.6918,
+          "end_frac": 0.7201,
+          "duration_frac": 0.0283,
+          "audio_rms": 0.065845
+        },
+        {
+          "text_word": "FOR",
+          "aligned_word": "FFORR",
+          "start_frac": 0.7296,
+          "end_frac": 0.7579,
+          "duration_frac": 0.0283,
+          "audio_rms": 0.050087
+        },
+        {
+          "text_word": "YOU",
+          "aligned_word": "YOUU",
+          "start_frac": 0.7673,
+          "end_frac": 1.0,
+          "duration_frac": 0.2327,
+          "audio_rms": 0.020866
+        }
+      ]
+    },
+    {
+      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-25_2/817_audio_clean.flac",
+      "text": "You made some small job in my lady\u2019s room\u2014you and your confederate Cusack\u2014and you managed that he should be the man sent for.",
+      "n_words_text": 26,
+      "n_words_aligned": 26,
+      "aligned_cleanly": true,
+      "spans_collapsed_to_zero": 0,
+      "mean_word_duration_frac": 0.0214,
+      "min_word_duration_frac": 0.0041,
+      "max_word_duration_frac": 0.0553,
+      "words": [
+        {
+          "text_word": "YOU",
+          "aligned_word": "YYOU",
+          "start_frac": 0.084,
+          "end_frac": 0.0984,
+          "duration_frac": 0.0143,
+          "audio_rms": 0.118603
+        },
+        {
+          "text_word": "MADE",
+          "aligned_word": "MADEE",
+          "start_frac": 0.1025,
+          "end_frac": 0.125,
+          "duration_frac": 0.0225,
+          "audio_rms": 0.1496
+        },
+        {
+          "text_word": "SOME",
+          "aligned_word": "SOMEE",
+          "start_frac": 0.1393,
+          "end_frac": 0.1639,
+          "duration_frac": 0.0246,
+          "audio_rms": 0.130221
+        },
+        {
+          "text_word": "SMALL",
+          "aligned_word": "SMAALLL",
+          "start_frac": 0.1762,
+          "end_frac": 0.2049,
+          "duration_frac": 0.0287,
+          "audio_rms": 0.119656
+        },
+        {
+          "text_word": "JOB",
+          "aligned_word": "JOB",
+          "start_frac": 0.209,
+          "end_frac": 0.2377,
+          "duration_frac": 0.0287,
+          "audio_rms": 0.136493
+        },
+        {
+          "text_word": "IN",
+          "aligned_word": "IN",
+          "start_frac": 0.2439,
+          "end_frac": 0.248,
+          "duration_frac": 0.0041,
+          "audio_rms": 0.084305
+        },
+        {
+          "text_word": "MY",
+          "aligned_word": "MY",
+          "start_frac": 0.2541,
+          "end_frac": 0.2582,
+          "duration_frac": 0.0041,
+          "audio_rms": 0.066019
+        },
+        {
+          "text_word": "LADY",
+          "aligned_word": "LADY",
+          "start_frac": 0.2623,
+          "end_frac": 0.2828,
+          "duration_frac": 0.0205,
+          "audio_rms": 0.126672
+        },
+        {
+          "text_word": "S",
+          "aligned_word": "SS",
+          "start_frac": 0.2848,
+          "end_frac": 0.291,
+          "duration_frac": 0.0061,
+          "audio_rms": 0.066802
+        },
+        {
+          "text_word": "ROOM",
+          "aligned_word": "RRROOOM",
+          "start_frac": 0.2951,
+          "end_frac": 0.3238,
+          "duration_frac": 0.0287,
+          "audio_rms": 0.050025
+        },
+        {
+          "text_word": "YOU",
+          "aligned_word": "YOOU",
+          "start_frac": 0.4078,
+          "end_frac": 0.4242,
+          "duration_frac": 0.0164,
+          "audio_rms": 0.138581
+        },
+        {
+          "text_word": "AND",
+          "aligned_word": "AND",
+          "start_frac": 0.4324,
+          "end_frac": 0.4406,
+          "duration_frac": 0.0082,
+          "audio_rms": 0.11922
+        },
+        {
+          "text_word": "YOUR",
+          "aligned_word": "YOUR",
+          "start_frac": 0.4426,
+          "end_frac": 0.4529,
+          "duration_frac": 0.0102,
+          "audio_rms": 0.142946
+        },
+        {
+          "text_word": "CONFEDERATE",
+          "aligned_word": "CCONFEEDERATTEE",
+          "start_frac": 0.457,
+          "end_frac": 0.5102,
+          "duration_frac": 0.0533,
+          "audio_rms": 0.111921
+        },
+        {
+          "text_word": "CUSACK",
+          "aligned_word": "CUSACCK",
+          "start_frac": 0.5205,
+          "end_frac": 0.5676,
+          "duration_frac": 0.0471,
+          "audio_rms": 0.048008
+        },
+        {
+          "text_word": "AND",
+          "aligned_word": "AND",
+          "start_frac": 0.666,
+          "end_frac": 0.6762,
+          "duration_frac": 0.0102,
+          "audio_rms": 0.223491
+        },
+        {
+          "text_word": "YOU",
+          "aligned_word": "YOUU",
+          "start_frac": 0.6803,
+          "end_frac": 0.6906,
+          "duration_frac": 0.0102,
+          "audio_rms": 0.127132
+        },
+        {
+          "text_word": "MANAGED",
+          "aligned_word": "MMANNAGEEDD",
+          "start_frac": 0.6947,
+          "end_frac": 0.7459,
+          "duration_frac": 0.0512,
+          "audio_rms": 0.102592
+        },
+        {
+          "text_word": "THAT",
+          "aligned_word": "THAT",
+          "start_frac": 0.7828,
+          "end_frac": 0.7951,
+          "duration_frac": 0.0123,
+          "audio_rms": 0.042818
+        },
+        {
+          "text_word": "HE",
+          "aligned_word": "HHE",
+          "start_frac": 0.8053,
+          "end_frac": 0.8197,
+          "duration_frac": 0.0143,
+          "audio_rms": 0.106008
+        },
+        {
+          "text_word": "SHOULD",
+          "aligned_word": "SHHOOUULDD",
+          "start_frac": 0.8238,
+          "end_frac": 0.8443,
+          "duration_frac": 0.0205,
+          "audio_rms": 0.078792
+        },
+        {
+          "text_word": "BE",
+          "aligned_word": "BEE",
+          "start_frac": 0.8484,
+          "end_frac": 0.8607,
+          "duration_frac": 0.0123,
+          "audio_rms": 0.169758
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "TTHE",
+          "start_frac": 0.8709,
+          "end_frac": 0.8811,
+          "duration_frac": 0.0102,
+          "audio_rms": 0.0769
+        },
+        {
+          "text_word": "MAN",
+          "aligned_word": "MMANN",
+          "start_frac": 0.8832,
+          "end_frac": 0.9078,
+          "duration_frac": 0.0246,
+          "audio_rms": 0.072405
+        },
+        {
+          "text_word": "SENT",
+          "aligned_word": "SENNT",
+          "start_frac": 0.916,
+          "end_frac": 0.9344,
+          "duration_frac": 0.0184,
+          "audio_rms": 0.046003
+        },
+        {
+          "text_word": "FOR",
+          "aligned_word": "FORRRRRRRR",
+          "start_frac": 0.9447,
+          "end_frac": 1.0,
+          "duration_frac": 0.0553,
+          "audio_rms": 0.040172
+        }
+      ]
+    },
+    {
+      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-25_2/567_audio_clean.flac",
+      "text": "But I presume that this other goose upon the sideboard, which is about the same weight and perfectly fresh, will answer your purpose equally well?\u201d",
+      "n_words_text": 25,
+      "n_words_aligned": 25,
+      "aligned_cleanly": true,
+      "spans_collapsed_to_zero": 0,
+      "mean_word_duration_frac": 0.0227,
+      "min_word_duration_frac": 0.0043,
+      "max_word_duration_frac": 0.0664,
+      "words": [
+        {
+          "text_word": "BUT",
+          "aligned_word": "BUT",
+          "start_frac": 0.1071,
+          "end_frac": 0.1178,
+          "duration_frac": 0.0107,
+          "audio_rms": 0.112917
+        },
+        {
+          "text_word": "I",
+          "aligned_word": "II",
+          "start_frac": 0.1221,
+          "end_frac": 0.1263,
+          "duration_frac": 0.0043,
+          "audio_rms": 0.155201
+        },
+        {
+          "text_word": "PRESUME",
+          "aligned_word": "PRRESSUUMEE",
+          "start_frac": 0.1349,
+          "end_frac": 0.1799,
+          "duration_frac": 0.045,
+          "audio_rms": 0.138898
+        },
+        {
+          "text_word": "THAT",
+          "aligned_word": "THATT",
+          "start_frac": 0.1863,
+          "end_frac": 0.1991,
+          "duration_frac": 0.0128,
+          "audio_rms": 0.067778
+        },
+        {
+          "text_word": "THIS",
+          "aligned_word": "THISS",
+          "start_frac": 0.2013,
+          "end_frac": 0.2141,
+          "duration_frac": 0.0128,
+          "audio_rms": 0.118191
+        },
+        {
+          "text_word": "OTHER",
+          "aligned_word": "OTHHER",
+          "start_frac": 0.2355,
+          "end_frac": 0.2548,
+          "duration_frac": 0.0193,
+          "audio_rms": 0.14048
+        },
+        {
+          "text_word": "GOOSE",
+          "aligned_word": "GOOOSE",
+          "start_frac": 0.2612,
+          "end_frac": 0.2891,
+          "duration_frac": 0.0278,
+          "audio_rms": 0.069314
+        },
+        {
+          "text_word": "UPON",
+          "aligned_word": "UPONN",
+          "start_frac": 0.3148,
+          "end_frac": 0.3362,
+          "duration_frac": 0.0214,
+          "audio_rms": 0.082467
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.3405,
+          "end_frac": 0.3469,
+          "duration_frac": 0.0064,
+          "audio_rms": 0.085205
+        },
+        {
+          "text_word": "SIDEBOARD",
+          "aligned_word": "SSIIDEEBOOARRD",
+          "start_frac": 0.3533,
+          "end_frac": 0.409,
+          "duration_frac": 0.0557,
+          "audio_rms": 0.082546
+        },
+        {
+          "text_word": "WHICH",
+          "aligned_word": "WHICH",
+          "start_frac": 0.4818,
+          "end_frac": 0.4946,
+          "duration_frac": 0.0128,
+          "audio_rms": 0.095038
+        },
+        {
+          "text_word": "IS",
+          "aligned_word": "IS",
+          "start_frac": 0.5011,
+          "end_frac": 0.5054,
+          "duration_frac": 0.0043,
+          "audio_rms": 0.094532
+        },
+        {
+          "text_word": "ABOUT",
+          "aligned_word": "ABOUTT",
+          "start_frac": 0.5118,
+          "end_frac": 0.531,
+          "duration_frac": 0.0193,
+          "audio_rms": 0.124002
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "TTHE",
+          "start_frac": 0.5332,
+          "end_frac": 0.5439,
+          "duration_frac": 0.0107,
+          "audio_rms": 0.076481
+        },
+        {
+          "text_word": "SAME",
+          "aligned_word": "SAME",
+          "start_frac": 0.5503,
+          "end_frac": 0.5717,
+          "duration_frac": 0.0214,
+          "audio_rms": 0.089498
+        },
+        {
+          "text_word": "WEIGHT",
+          "aligned_word": "WEIIGHHTT",
+          "start_frac": 0.5803,
+          "end_frac": 0.6039,
+          "duration_frac": 0.0236,
+          "audio_rms": 0.116354
+        },
+        {
+          "text_word": "AND",
+          "aligned_word": "AND",
+          "start_frac": 0.6274,
+          "end_frac": 0.636,
+          "duration_frac": 0.0086,
+          "audio_rms": 0.062566
+        },
+        {
+          "text_word": "PERFECTLY",
+          "aligned_word": "PERRFECTLY",
+          "start_frac": 0.6424,
+          "end_frac": 0.6831,
+          "duration_frac": 0.0407,
+          "audio_rms": 0.065895
+        },
+        {
+          "text_word": "FRESH",
+          "aligned_word": "FRREESSHH",
+          "start_frac": 0.6916,
+          "end_frac": 0.7195,
+          "duration_frac": 0.0278,
+          "audio_rms": 0.065241
+        },
+        {
+          "text_word": "WILL",
+          "aligned_word": "WWILL",
+          "start_frac": 0.7687,
+          "end_frac": 0.7859,
+          "duration_frac": 0.0171,
+          "audio_rms": 0.045967
+        },
+        {
+          "text_word": "ANSWER",
+          "aligned_word": "ANNSSWER",
+          "start_frac": 0.7966,
+          "end_frac": 0.818,
+          "duration_frac": 0.0214,
+          "audio_rms": 0.080732
+        },
+        {
+          "text_word": "YOUR",
+          "aligned_word": "YOUUR",
+          "start_frac": 0.8244,
+          "end_frac": 0.8351,
+          "duration_frac": 0.0107,
+          "audio_rms": 0.114617
+        },
+        {
+          "text_word": "PURPOSE",
+          "aligned_word": "PURRPPOSSEE",
+          "start_frac": 0.8415,
+          "end_frac": 0.8779,
+          "duration_frac": 0.0364,
+          "audio_rms": 0.068153
+        },
+        {
+          "text_word": "EQUALLY",
+          "aligned_word": "EEQUUALLLLY",
+          "start_frac": 0.8972,
+          "end_frac": 0.9272,
+          "duration_frac": 0.03,
+          "audio_rms": 0.119776
+        },
+        {
+          "text_word": "WELL",
+          "aligned_word": "WEELLLLLL",
+          "start_frac": 0.9336,
+          "end_frac": 1.0,
+          "duration_frac": 0.0664,
+          "audio_rms": 0.065556
+        }
+      ]
+    },
+    {
+      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-25/172_audio_clean.flac",
+      "text": "I am staying there while I conduct the inquiry.\u201d",
+      "n_words_text": 9,
+      "n_words_aligned": 9,
+      "aligned_cleanly": true,
+      "spans_collapsed_to_zero": 0,
+      "mean_word_duration_frac": 0.0619,
+      "min_word_duration_frac": 0.0155,
+      "max_word_duration_frac": 0.2113,
+      "words": [
+        {
+          "text_word": "I",
+          "aligned_word": "II",
+          "start_frac": 0.2474,
+          "end_frac": 0.2629,
+          "duration_frac": 0.0155,
+          "audio_rms": 0.08174
+        },
+        {
+          "text_word": "AM",
+          "aligned_word": "AM",
+          "start_frac": 0.2784,
+          "end_frac": 0.2938,
+          "duration_frac": 0.0155,
+          "audio_rms": 0.157827
+        },
+        {
+          "text_word": "STAYING",
+          "aligned_word": "SSTTAYINNG",
+          "start_frac": 0.3196,
+          "end_frac": 0.4072,
+          "duration_frac": 0.0876,
+          "audio_rms": 0.090366
+        },
+        {
+          "text_word": "THERE",
+          "aligned_word": "THERREE",
+          "start_frac": 0.4227,
+          "end_frac": 0.4742,
+          "duration_frac": 0.0515,
+          "audio_rms": 0.090978
+        },
+        {
+          "text_word": "WHILE",
+          "aligned_word": "WHILE",
+          "start_frac": 0.5567,
+          "end_frac": 0.5979,
+          "duration_frac": 0.0412,
+          "audio_rms": 0.121307
+        },
+        {
+          "text_word": "I",
+          "aligned_word": "I",
+          "start_frac": 0.6082,
+          "end_frac": 0.6237,
+          "duration_frac": 0.0155,
+          "audio_rms": 0.096637
+        },
+        {
+          "text_word": "CONDUCT",
+          "aligned_word": "CONDUCTT",
+          "start_frac": 0.6392,
+          "end_frac": 0.732,
+          "duration_frac": 0.0928,
+          "audio_rms": 0.096703
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.7526,
+          "end_frac": 0.7784,
+          "duration_frac": 0.0258,
+          "audio_rms": 0.059098
+        },
+        {
+          "text_word": "INQUIRY",
+          "aligned_word": "INNQUUIRRRYYYYYYY",
+          "start_frac": 0.7887,
+          "end_frac": 1.0,
+          "duration_frac": 0.2113,
+          "audio_rms": 0.036253
+        }
+      ]
+    },
+    {
+      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-30/651_audio_clean.flac",
+      "text": "The first had walked both ways, but the other had run swiftly, and, as his tread was marked in places over the depression of the boot, it was obvious that he had passed after the other.",
+      "n_words_text": 36,
+      "n_words_aligned": 36,
+      "aligned_cleanly": true,
+      "spans_collapsed_to_zero": 0,
+      "mean_word_duration_frac": 0.0141,
+      "min_word_duration_frac": 0.0028,
+      "max_word_duration_frac": 0.0823,
+      "words": [
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.0496,
+          "end_frac": 0.0567,
+          "duration_frac": 0.0071,
+          "audio_rms": 0.06915
+        },
+        {
+          "text_word": "FIRST",
+          "aligned_word": "FIRRSST",
+          "start_frac": 0.061,
+          "end_frac": 0.078,
+          "duration_frac": 0.017,
+          "audio_rms": 0.170778
+        },
+        {
+          "text_word": "HAD",
+          "aligned_word": "HADD",
+          "start_frac": 0.0837,
+          "end_frac": 0.0908,
+          "duration_frac": 0.0071,
+          "audio_rms": 0.105947
+        },
+        {
+          "text_word": "WALKED",
+          "aligned_word": "WALKEDD",
+          "start_frac": 0.095,
+          "end_frac": 0.1121,
+          "duration_frac": 0.017,
+          "audio_rms": 0.116971
+        },
+        {
+          "text_word": "BOTH",
+          "aligned_word": "BOTTHH",
+          "start_frac": 0.1177,
+          "end_frac": 0.1319,
+          "duration_frac": 0.0142,
+          "audio_rms": 0.110671
+        },
+        {
+          "text_word": "WAYS",
+          "aligned_word": "WAAYS",
+          "start_frac": 0.1376,
+          "end_frac": 0.156,
+          "duration_frac": 0.0184,
+          "audio_rms": 0.06138
+        },
+        {
+          "text_word": "BUT",
+          "aligned_word": "BUT",
+          "start_frac": 0.2028,
+          "end_frac": 0.2113,
+          "duration_frac": 0.0085,
+          "audio_rms": 0.097123
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "TTHE",
+          "start_frac": 0.2142,
+          "end_frac": 0.2227,
+          "duration_frac": 0.0085,
+          "audio_rms": 0.055534
+        },
+        {
+          "text_word": "OTHER",
+          "aligned_word": "OTHHERR",
+          "start_frac": 0.2355,
+          "end_frac": 0.2496,
+          "duration_frac": 0.0142,
+          "audio_rms": 0.114637
+        },
+        {
+          "text_word": "HAD",
+          "aligned_word": "HAAD",
+          "start_frac": 0.2794,
+          "end_frac": 0.2865,
+          "duration_frac": 0.0071,
+          "audio_rms": 0.089854
+        },
+        {
+          "text_word": "RUN",
+          "aligned_word": "RUNN",
+          "start_frac": 0.2908,
+          "end_frac": 0.3007,
+          "duration_frac": 0.0099,
+          "audio_rms": 0.125873
+        },
+        {
+          "text_word": "SWIFTLY",
+          "aligned_word": "SSWWIFTLY",
+          "start_frac": 0.3064,
+          "end_frac": 0.3333,
+          "duration_frac": 0.027,
+          "audio_rms": 0.082852
+        },
+        {
+          "text_word": "AND",
+          "aligned_word": "ANNND",
+          "start_frac": 0.3716,
+          "end_frac": 0.3816,
+          "duration_frac": 0.0099,
+          "audio_rms": 0.125962
+        },
+        {
+          "text_word": "AS",
+          "aligned_word": "ASS",
+          "start_frac": 0.434,
+          "end_frac": 0.4411,
+          "duration_frac": 0.0071,
+          "audio_rms": 0.096072
+        },
+        {
+          "text_word": "HIS",
+          "aligned_word": "HISS",
+          "start_frac": 0.4454,
+          "end_frac": 0.4539,
+          "duration_frac": 0.0085,
+          "audio_rms": 0.128183
+        },
+        {
+          "text_word": "TREAD",
+          "aligned_word": "TRREEADD",
+          "start_frac": 0.461,
+          "end_frac": 0.4794,
+          "duration_frac": 0.0184,
+          "audio_rms": 0.099281
+        },
+        {
+          "text_word": "WAS",
+          "aligned_word": "WASS",
+          "start_frac": 0.5149,
+          "end_frac": 0.5234,
+          "duration_frac": 0.0085,
+          "audio_rms": 0.071625
+        },
+        {
+          "text_word": "MARKED",
+          "aligned_word": "MARKKEED",
+          "start_frac": 0.5291,
+          "end_frac": 0.5433,
+          "duration_frac": 0.0142,
+          "audio_rms": 0.084871
+        },
+        {
+          "text_word": "IN",
+          "aligned_word": "IN",
+          "start_frac": 0.5475,
+          "end_frac": 0.5504,
+          "duration_frac": 0.0028,
+          "audio_rms": 0.099153
+        },
+        {
+          "text_word": "PLACES",
+          "aligned_word": "PLLACEESS",
+          "start_frac": 0.5574,
+          "end_frac": 0.5844,
+          "duration_frac": 0.027,
+          "audio_rms": 0.105646
+        },
+        {
+          "text_word": "OVER",
+          "aligned_word": "OVVER",
+          "start_frac": 0.5957,
+          "end_frac": 0.6028,
+          "duration_frac": 0.0071,
+          "audio_rms": 0.093235
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.6057,
+          "end_frac": 0.6099,
+          "duration_frac": 0.0043,
+          "audio_rms": 0.071591
+        },
+        {
+          "text_word": "DEPRESSION",
+          "aligned_word": "DDEPRRESSION",
+          "start_frac": 0.6113,
+          "end_frac": 0.6426,
+          "duration_frac": 0.0312,
+          "audio_rms": 0.089266
+        },
+        {
+          "text_word": "OF",
+          "aligned_word": "OF",
+          "start_frac": 0.6496,
+          "end_frac": 0.6539,
+          "duration_frac": 0.0043,
+          "audio_rms": 0.110646
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "THE",
+          "start_frac": 0.6582,
+          "end_frac": 0.6624,
+          "duration_frac": 0.0043,
+          "audio_rms": 0.111068
+        },
+        {
+          "text_word": "BOOT",
+          "aligned_word": "BOOT",
+          "start_frac": 0.6667,
+          "end_frac": 0.6837,
+          "duration_frac": 0.017,
+          "audio_rms": 0.104762
+        },
+        {
+          "text_word": "IT",
+          "aligned_word": "IT",
+          "start_frac": 0.7291,
+          "end_frac": 0.7319,
+          "duration_frac": 0.0028,
+          "audio_rms": 0.092269
+        },
+        {
+          "text_word": "WAS",
+          "aligned_word": "WWAS",
+          "start_frac": 0.7348,
+          "end_frac": 0.7418,
+          "duration_frac": 0.0071,
+          "audio_rms": 0.089499
+        },
+        {
+          "text_word": "OBVIOUS",
+          "aligned_word": "OBBVIOOUSS",
+          "start_frac": 0.7574,
+          "end_frac": 0.7816,
+          "duration_frac": 0.0241,
+          "audio_rms": 0.073837
+        },
+        {
+          "text_word": "THAT",
+          "aligned_word": "THHAT",
+          "start_frac": 0.8,
+          "end_frac": 0.8085,
+          "duration_frac": 0.0085,
+          "audio_rms": 0.04239
+        },
+        {
+          "text_word": "HE",
+          "aligned_word": "HE",
+          "start_frac": 0.8142,
+          "end_frac": 0.8241,
+          "duration_frac": 0.0099,
+          "audio_rms": 0.07179
+        },
+        {
+          "text_word": "HAD",
+          "aligned_word": "HAD",
+          "start_frac": 0.8298,
+          "end_frac": 0.8383,
+          "duration_frac": 0.0085,
+          "audio_rms": 0.078003
+        },
+        {
+          "text_word": "PASSED",
+          "aligned_word": "PASSED",
+          "start_frac": 0.8468,
+          "end_frac": 0.8709,
+          "duration_frac": 0.0241,
+          "audio_rms": 0.082421
+        },
+        {
+          "text_word": "AFTER",
+          "aligned_word": "AFTERR",
+          "start_frac": 0.8894,
+          "end_frac": 0.9021,
+          "duration_frac": 0.0128,
+          "audio_rms": 0.065223
+        },
+        {
+          "text_word": "THE",
+          "aligned_word": "TTHEE",
+          "start_frac": 0.905,
+          "end_frac": 0.9121,
+          "duration_frac": 0.0071,
+          "audio_rms": 0.051702
+        },
+        {
+          "text_word": "OTHER",
+          "aligned_word": "OTHERRR",
+          "start_frac": 0.9177,
+          "end_frac": 1.0,
+          "duration_frac": 0.0823,
+          "audio_rms": 0.015521
+        }
+      ]
+    }
+  ]
+}
