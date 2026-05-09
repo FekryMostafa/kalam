@@ -2,9 +2,13 @@
 
 Outputs PNGs + a summary.md to analysis/silent_vs_voiced/.
 """
-import os, json, glob, sys
-import numpy as np
+import glob
+import json
+import os
+import sys
+
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy import signal as sps
 
 OUT = 'analysis/silent_vs_voiced'

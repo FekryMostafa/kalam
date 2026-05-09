@@ -34,6 +34,15 @@ Always use the anatomical label, not the channel index, in plots / docs / conver
 - Never build before sign-off. Propose first; wait for an explicit go-ahead before writing or modifying code. "Auto mode" applies to low-risk plumbing only — design choices need approval.
 - Use relative paths or env-configured paths in scripts. Avoid machine-specific absolute paths.
 
+## Environment
+- All Python deps are pinned in `requirements.txt`. Set up: `python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`.
+- Don't paper over a missing dep with try/except ImportError or hardcoded fallbacks. Add it to `requirements.txt` and `pip install` it.
+
+## Linting
+- `ruff` is the linter + formatter. Config in `pyproject.toml`.
+- Run before pushing: `ruff check app/ experiments/encoder/` (must pass) and `ruff format app/ experiments/encoder/` (auto-fix).
+- A pre-push git hook enforces this. Install it once: `git config core.hooksPath hooks`.
+
 ## Cloud compute discipline
 - Don't waste paid GPU time. Smoke-test on a tiny subset before the real run; only kick off long training once the loop runs end-to-end (forward, backward, val, ckpt save).
 - Measure batch size on the actual GPU with real utterance lengths. No guessing.

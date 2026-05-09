@@ -11,7 +11,10 @@ Anatomy mapping (0-indexed):
   ch6 right cheek near nose      -> upper face
   ch7 right cheek 4 cm from ear  -> jaw/masseter
 """
-import os, json, glob
+import glob
+import json
+import os
+
 import numpy as np
 from scipy import signal as sps
 
@@ -121,7 +124,7 @@ def group_agg(per_ch):
 
 out = {
     'method': 'paired voiced/silent EMG, same text, 7 sessions, Gaddy preprocessed (notch+2Hz HP)',
-    'n_pairs': int(len(rms_v_all)),
+    'n_pairs': len(rms_v_all),
     'channel_to_anatomy': {
         '0': 'lips_L', '1': 'chin_L', '2': 'floor_of_mouth', '3': 'larynx',
         '4': 'jaw_R', '5': 'lips_R', '6': 'upper_face', '7': 'masseter',

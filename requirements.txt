@@ -1,0 +1,12 @@
+torch>=2.5
+torchaudio>=2.5
+numpy>=1.26
+scipy>=1.11
+soundfile>=0.12
+jiwer>=3.0
+g2p-en>=2.1
+psutil>=5.9
+matplotlib>=3.8
+
+# dev
+ruff>=0.6

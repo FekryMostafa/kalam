@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Block git push if ruff finds lint errors in encoder code.
+# Install once: git config core.hooksPath hooks
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT"
+
+echo "[pre-push] running ruff check on app/ experiments/encoder/..."
+if ! python3 -m ruff check app/ experiments/encoder/; then
+    echo
+    echo "[pre-push] ruff found errors. fix them or run:"
+    echo "    python3 -m ruff check app/ experiments/encoder/ --fix"
+    echo "    python3 -m ruff format app/ experiments/encoder/"
+    exit 1
+fi
+
+echo "[pre-push] OK"

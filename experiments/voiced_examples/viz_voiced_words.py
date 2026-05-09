@@ -3,9 +3,12 @@
 Applies Gaddy-style preprocessing (notch 60 Hz harmonics + 2 Hz highpass)
 and z-scores per channel before plotting so speech activity is visible.
 """
-import os, glob, json
-import numpy as np
+import glob
+import json
+import os
+
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy import signal as sps
 
 # Paths are resolved relative to where you run this from.

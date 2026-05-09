@@ -28,17 +28,20 @@ if _PROJECT_ROOT not in sys.path:
 
 os.environ.setdefault('PYTORCH_ENABLE_MPS_FALLBACK', '1')
 
-import numpy as np  # noqa: E402
-import soundfile  # noqa: E402
-import torch  # noqa: E402
-import torchaudio  # noqa: E402
+import numpy as np
+import soundfile
+import torch
+import torchaudio
 
-from app.encoder.data.align import (  # noqa: E402
-    _audio_emissions, _normalise_text, _tokens_for_text,
-    _word_spans_from_alignment, _get_asr, load_audio,
+from app.encoder.data.align import (
+    _audio_emissions,
+    _get_asr,
+    _normalise_text,
+    _tokens_for_text,
+    _word_spans_from_alignment,
+    load_audio,
 )
-from app.encoder.vocab import text_to_phonemes  # noqa: E402
-
+from app.encoder.vocab import text_to_phonemes
 
 OUT_PATH = os.path.join(_PROJECT_ROOT, 'logs', 'encoder', 'alignment_check.json')
 AUDIO_OUT_DIR = os.path.join(_PROJECT_ROOT, 'cache', 'encoder', 'align_audio')
@@ -164,9 +167,10 @@ def main():
     args = parser.parse_args()
 
     from g2p_en import G2p
+
     from app.encoder.data.dataset import GaddyEMGDataset
 
-    print(f'Output paths:', flush=True)
+    print('Output paths:', flush=True)
     print(f'  report:      {OUT_PATH}', flush=True)
     print(f'  audio clips: {AUDIO_OUT_DIR}/<phoneme_class>/', flush=True)
 

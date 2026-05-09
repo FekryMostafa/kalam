@@ -31,12 +31,12 @@ if _PROJECT_ROOT not in sys.path:
 
 os.environ.setdefault('PYTORCH_ENABLE_MPS_FALLBACK', '1')
 
-import torch  # noqa: E402
-import torch.nn.functional as F  # noqa: E402
+import torch
+import torch.nn.functional as F
 
-from app.encoder.device import pick_device, setup_env, empty_cache  # noqa: E402
-from app.encoder.model import ConformerCTC  # noqa: E402
-from app.encoder.vocab import BLANK_IDX  # noqa: E402
+from app.encoder.device import empty_cache, pick_device, setup_env
+from app.encoder.model import ConformerCTC
+from app.encoder.vocab import BLANK_IDX
 
 
 def _mem_gib(device):
@@ -54,7 +54,7 @@ def _step(model, opt, T, B, device):
     target_lens = torch.full((B,), 30, dtype=torch.long, device=device)
 
     opt.zero_grad()
-    log_probs, features, out_lens = model(emg, emg_lens)
+    log_probs, _, out_lens = model(emg, emg_lens)
     log_probs_T = log_probs.transpose(0, 1).contiguous()
     loss = F.ctc_loss(
         log_probs_T, targets, out_lens, target_lens,

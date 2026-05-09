@@ -1,0 +1,36 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = ["cache", "dataset", "logs", ".venv", "__pycache__"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes (unused imports, undefined names, etc.)
+    "I",    # isort (import order)
+    "B",    # flake8-bugbear (likely bugs)
+    "UP",   # pyupgrade (modernize syntax)
+    "SIM",  # flake8-simplify
+    "RUF",  # ruff-specific
+]
+ignore = [
+    "E501",   # line too long (handled by formatter)
+    "E741",   # ambiguous variable name (we use l/i/L for lengths)
+    "B008",   # function call in default argument (torchaudio API uses this)
+    "B905",   # zip without strict= (we don't need it)
+    "RUF012", # mutable class defaults (frozen dataclasses don't apply here)
+    "SIM108", # ternary if-else (sometimes harder to read)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"experiments/**" = [
+    "E402",   # module-level import after non-import (we set env vars first)
+]
+"app/encoder/data/__init__.py" = ["F401"]
+"app/encoder/__init__.py" = ["F401"]
+"app/__init__.py" = ["F401"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
