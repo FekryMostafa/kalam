@@ -6,17 +6,27 @@ set -e
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 cd "$REPO_ROOT"
 
-if ! command -v ruff >/dev/null 2>&1; then
-    echo "[pre-push] ruff not found. run: pip install -r requirements.txt"
-    exit 1
-fi
+for tool in ruff vulture; do
+    if ! command -v "$tool" >/dev/null 2>&1; then
+        echo "[pre-push] $tool not found. run: pip install -r requirements.txt"
+        exit 1
+    fi
+done
 
-echo "[pre-push] running ruff check on app/ experiments/encoder/..."
+echo "[pre-push] ruff check..."
 if ! ruff check app/ experiments/encoder/; then
     echo
     echo "[pre-push] ruff found errors. fix them or run:"
     echo "    ruff check app/ experiments/encoder/ --fix"
     echo "    ruff format app/ experiments/encoder/"
+    exit 1
+fi
+
+echo "[pre-push] vulture (dead code)..."
+if ! vulture app/ experiments/encoder/ --min-confidence 80; then
+    echo
+    echo "[pre-push] vulture found unused code. delete it or"
+    echo "    explain via comment + raise --min-confidence."
     exit 1
 fi
 
