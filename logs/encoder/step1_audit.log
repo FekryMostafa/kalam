@@ -1,0 +1,26 @@
+Loading both modes...
+  8653 utterances across 24 sessions
+Walking utterances...
+  1000/8653
+  2000/8653
+  3000/8653
+  4000/8653
+  5000/8653
+  6000/8653
+  7000/8653
+  8000/8653
+
+============================================================
+SUMMARY
+============================================================
+  n_utterances: 8653
+  n_voiced: 7065
+  n_silent: 1588
+  empty_target_count: 19
+  total_phonemes_across_corpus: 525746
+  total_voicing_pair_class_instances: 189567
+  voicing_pair_share: 0.3606
+  inventory: {'arpabet_size': 39, 'collapsed_classes': 31, 'total_ctc_classes_with_blank': 32, 'classes_seen_in_corpus': 31, 'classes_unseen': []}
+  silent_voiced_overlap: {'silent_utterances': 1588, 'voiced_utterances': 7065, 'overlap_count': 1588, 'note': 'overlap = utterances recorded in both modes (parallel pairs). expected to be > 0 for Gaddy. when defining the silent test set, exclude its book_locations from voiced training.'}
+
+Wrote /Users/fekrymostafa/Desktop/kalam/Project kalam/logs/encoder/phoneme_targets.json

@@ -1,0 +1,138 @@
+Building dataset...
+  examples=7065 sessions=17 modes=['voiced'] mask_channels=[3] with_frame_labels=True balanced_sampler=False
+Building model...
+  params=3,483,488
+/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
+  return torch.ctc_loss(
+/Users/fekrymostafa/Desktop/kalam/Project kalam/app/encoder/train.py:244: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
+  sums[k] += float(res[k] if isinstance(res[k], torch.Tensor) else res['total'])
+epoch 0 step 10 total=5.723 ctc=3.834 frame_ce=3.777 contrast=0.000 grad=13.05
+epoch 0 step 20 total=5.554 ctc=4.047 frame_ce=3.016 contrast=0.000 grad=15.28
+epoch 0 step 30 total=4.766 ctc=3.190 frame_ce=3.151 contrast=0.000 grad=3.25
+epoch 0 step 40 total=4.707 ctc=3.214 frame_ce=2.985 contrast=0.000 grad=1.67
+epoch 0 step 50 total=5.032 ctc=3.491 frame_ce=3.082 contrast=0.000 grad=3.58
+epoch 0 step 60 total=4.741 ctc=3.216 frame_ce=3.051 contrast=0.000 grad=1.51
+epoch 0 step 70 total=4.709 ctc=3.197 frame_ce=3.024 contrast=0.000 grad=1.68
+epoch 0 step 80 total=4.804 ctc=3.338 frame_ce=2.933 contrast=0.000 grad=3.14
+epoch 0 step 90 total=4.656 ctc=3.084 frame_ce=3.144 contrast=0.000 grad=3.32
+epoch 0 step 100 total=4.621 ctc=3.170 frame_ce=2.903 contrast=0.000 grad=1.43
+epoch 0 step 110 total=4.832 ctc=3.199 frame_ce=3.265 contrast=0.000 grad=2.11
+epoch 0 step 120 total=4.686 ctc=3.254 frame_ce=2.864 contrast=0.000 grad=1.40
+epoch 0 step 130 total=4.626 ctc=3.181 frame_ce=2.888 contrast=0.000 grad=2.43
+epoch 0 step 140 total=4.749 ctc=3.204 frame_ce=3.090 contrast=0.000 grad=2.20
+epoch 0 step 150 total=4.832 ctc=3.205 frame_ce=3.253 contrast=0.000 grad=5.92
+epoch 0 step 160 total=5.130 ctc=3.599 frame_ce=3.063 contrast=0.000 grad=5.76
+epoch 0 step 170 total=4.721 ctc=3.186 frame_ce=3.071 contrast=0.000 grad=2.22
+epoch 0 step 180 total=4.822 ctc=3.223 frame_ce=3.198 contrast=0.000 grad=5.43
+epoch 0 step 190 total=4.617 ctc=3.249 frame_ce=2.735 contrast=0.000 grad=2.40
+epoch 0 step 200 total=4.885 ctc=3.381 frame_ce=3.008 contrast=0.000 grad=2.34
+epoch 0 step 210 total=6.672 ctc=5.543 frame_ce=2.258 contrast=0.000 grad=38.81
+epoch 0 step 220 total=4.617 ctc=3.265 frame_ce=2.704 contrast=0.000 grad=2.80
+epoch 0 step 230 total=4.686 ctc=3.271 frame_ce=2.831 contrast=0.000 grad=1.80
+epoch 0 step 240 total=4.756 ctc=3.259 frame_ce=2.994 contrast=0.000 grad=2.35
+epoch 0 step 250 total=4.856 ctc=3.397 frame_ce=2.917 contrast=0.000 grad=3.65
+epoch 0 step 260 total=5.150 ctc=3.813 frame_ce=2.675 contrast=0.000 grad=14.75
+epoch 0 step 270 total=4.688 ctc=3.177 frame_ce=3.022 contrast=0.000 grad=5.09
+epoch 0 step 280 total=4.576 ctc=3.202 frame_ce=2.748 contrast=0.000 grad=2.45
+epoch 0 step 290 total=4.540 ctc=3.218 frame_ce=2.645 contrast=0.000 grad=3.07
+epoch 0 step 300 total=4.719 ctc=3.258 frame_ce=2.922 contrast=0.000 grad=2.48
+epoch 0 step 310 total=4.759 ctc=3.294 frame_ce=2.930 contrast=0.000 grad=1.95
+epoch 0 step 320 total=4.801 ctc=3.327 frame_ce=2.950 contrast=0.000 grad=2.46
+epoch 0 step 330 total=4.565 ctc=3.148 frame_ce=2.834 contrast=0.000 grad=3.35
+epoch 0 step 340 total=4.612 ctc=3.188 frame_ce=2.848 contrast=0.000 grad=2.89
+epoch 0 step 350 total=4.691 ctc=3.371 frame_ce=2.640 contrast=0.000 grad=7.77
+epoch 0 step 360 total=4.526 ctc=3.130 frame_ce=2.793 contrast=0.000 grad=3.23
+epoch 0 step 370 total=4.692 ctc=3.294 frame_ce=2.795 contrast=0.000 grad=2.15
+epoch 0 step 380 total=5.063 ctc=3.177 frame_ce=3.771 contrast=0.000 grad=1.91
+epoch 0 step 390 total=4.619 ctc=3.193 frame_ce=2.851 contrast=0.000 grad=1.21
+epoch 0 step 400 total=4.461 ctc=3.202 frame_ce=2.518 contrast=0.000 grad=4.25
+epoch 0 step 410 total=4.959 ctc=3.590 frame_ce=2.738 contrast=0.000 grad=6.33
+epoch 0 step 420 total=4.597 ctc=3.223 frame_ce=2.746 contrast=0.000 grad=1.99
+epoch 0 step 430 total=4.558 ctc=3.225 frame_ce=2.665 contrast=0.000 grad=2.84
+epoch 0 step 440 total=4.605 ctc=3.154 frame_ce=2.902 contrast=0.000 grad=4.48
+epoch 0 step 450 total=4.671 ctc=3.414 frame_ce=2.514 contrast=0.000 grad=2.62
+epoch 0 step 460 total=4.695 ctc=3.213 frame_ce=2.963 contrast=0.000 grad=1.48
+epoch 0 step 470 total=4.514 ctc=3.148 frame_ce=2.731 contrast=0.000 grad=1.03
+epoch 0 step 480 total=4.587 ctc=3.141 frame_ce=2.893 contrast=0.000 grad=2.76
+epoch 0 step 490 total=4.753 ctc=3.399 frame_ce=2.709 contrast=0.000 grad=3.82
+epoch 0 step 500 total=4.300 ctc=3.049 frame_ce=2.504 contrast=0.000 grad=2.48
+epoch 0 step 510 total=4.529 ctc=3.083 frame_ce=2.892 contrast=0.000 grad=2.20
+epoch 0 step 520 total=4.759 ctc=3.442 frame_ce=2.634 contrast=0.000 grad=3.08
+epoch 0 step 530 total=4.411 ctc=3.135 frame_ce=2.552 contrast=0.000 grad=3.23
+epoch 0 step 540 total=4.621 ctc=3.197 frame_ce=2.848 contrast=0.000 grad=1.84
+epoch 0 step 550 total=4.740 ctc=3.381 frame_ce=2.717 contrast=0.000 grad=5.00
+epoch 0 step 560 total=4.666 ctc=3.350 frame_ce=2.632 contrast=0.000 grad=4.53
+epoch 0 step 570 total=4.742 ctc=3.245 frame_ce=2.993 contrast=0.000 grad=2.67
+epoch 0 step 580 total=4.413 ctc=3.026 frame_ce=2.774 contrast=0.000 grad=3.71
+epoch 0 step 590 total=4.435 ctc=3.129 frame_ce=2.612 contrast=0.000 grad=4.15
+epoch 0 step 600 total=4.902 ctc=3.550 frame_ce=2.703 contrast=0.000 grad=5.40
+epoch 0 step 610 total=4.564 ctc=3.244 frame_ce=2.639 contrast=0.000 grad=3.47
+epoch 0 step 620 total=4.322 ctc=3.036 frame_ce=2.571 contrast=0.000 grad=2.92
+epoch 0 step 630 total=4.617 ctc=3.215 frame_ce=2.804 contrast=0.000 grad=4.01
+epoch 0 step 640 total=4.349 ctc=2.981 frame_ce=2.735 contrast=0.000 grad=1.92
+epoch 0 step 650 total=4.189 ctc=2.966 frame_ce=2.446 contrast=0.000 grad=1.59
+epoch 0 step 660 total=4.679 ctc=3.175 frame_ce=3.008 contrast=0.000 grad=2.72
+epoch 0 step 670 total=4.526 ctc=2.974 frame_ce=3.104 contrast=0.000 grad=3.86
+epoch 0 step 680 total=4.395 ctc=3.027 frame_ce=2.734 contrast=0.000 grad=1.86
+epoch 0 step 690 total=4.334 ctc=3.067 frame_ce=2.534 contrast=0.000 grad=3.21
+epoch 0 step 700 total=4.331 ctc=3.042 frame_ce=2.579 contrast=0.000 grad=1.96
+epoch 0 step 710 total=4.259 ctc=2.907 frame_ce=2.704 contrast=0.000 grad=3.64
+epoch 0 step 720 total=4.399 ctc=3.030 frame_ce=2.739 contrast=0.000 grad=2.16
+epoch 0 step 730 total=4.403 ctc=3.037 frame_ce=2.730 contrast=0.000 grad=3.03
+epoch 0 step 740 total=4.447 ctc=3.104 frame_ce=2.686 contrast=0.000 grad=2.09
+epoch 0 step 750 total=4.370 ctc=2.979 frame_ce=2.782 contrast=0.000 grad=2.17
+epoch 0 step 760 total=4.947 ctc=3.339 frame_ce=3.216 contrast=0.000 grad=5.81
+Traceback (most recent call last):
+  File "/Users/fekrymostafa/Desktop/kalam/Project kalam/experiments/encoder/voiced_larynx_masked.py", line 124, in <module>
+    print(f'  val: {len(val_dataset)} examples ({n_v_silent} silent / {n_v_voiced} voiced)')
+^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/Project kalam/experiments/encoder/voiced_larynx_masked.py", line 119, in main
+    with_frame_labels=False,  # val PER doesn't need frame labels
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/Project kalam/app/encoder/train.py", line 235, in train_ctc
+    log_probs, _, out_lens = model(batch['emg'], batch['emg_lengths'])
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/Project kalam/app/encoder/train.py", line 178, in _step
+    has_frame = batch['has_frame_labels']
+                                    ^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/Project kalam/app/encoder/model.py", line 90, in forward
+    x, out_lengths = self.conformer(x, out_lengths)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torchaudio/models/conformer.py", line 292, in forward
+    x = layer(x, encoder_padding_mask)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torchaudio/models/conformer.py", line 194, in forward
+    x, _ = self.self_attn(
+           ^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/activation.py", line 1492, in forward
+    attn_output, attn_output_weights = F.multi_head_attention_forward(
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py", line 6682, in multi_head_attention_forward
+    attn_output = scaled_dot_product_attention(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: MPS backend out of memory (MPS allocated: 25.70 GiB, other allocations: 2.16 GiB, max allowed: 27.20 GiB). Tried to allocate 256 bytes on shared pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).

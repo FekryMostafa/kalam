@@ -1,0 +1,58 @@
+Output paths:
+  report:      /Users/fekrymostafa/Desktop/kalam/Project kalam/logs/encoder/alignment_check.json
+  audio clips: /Users/fekrymostafa/Desktop/kalam/Project kalam/cache/encoder/align_audio/<phoneme_class>/
+
+Loading voiced dataset (no frame labels)...
+  7065 voiced utterances available
+  picked 10 utterances (seed=0)
+
+Loading wav2vec2 ASR (one-time, downloads ~360 MB on first run)...
+  ready
+
+Loading g2p_en...
+  ready
+
+[1/10] 5-2/554: "I could not live there longer without some advice."
+  [OK] text_words=9  aligned_words=9  collapsed_spans=0  word_dur min/mean/max = 0.0103/0.0653/0.2113
+
+[2/10] 4-24/525: "“It may give him a sleepless night."
+  [OK] text_words=7  aligned_words=7  collapsed_spans=0  word_dur min/mean/max = 0.0117/0.0718/0.2047
+
+[3/10] 4-30/388: "“But what is the good of all these vague theories,” cried th..."
+  [OK] text_words=29  aligned_words=29  collapsed_spans=0  word_dur min/mean/max = 0.0037/0.0197/0.1316
+
+[4/10] 4-25/334: "Mrs. St. Clair has most kindly put two rooms at my disposal,..."
+  [OK] text_words=30  aligned_words=30  collapsed_spans=0  word_dur min/mean/max = 0.0017/0.019/0.0979
+
+[5/10] 5-11/60: "At the same time four of their fighting machines, similarly ..."
+  [OK] text_words=48  aligned_words=48  collapsed_spans=0  word_dur min/mean/max = 0.0019/0.0104/0.0599
+
+[6/10] 4-23/18: "“Oh, Anstruther would do your work for you."
+  [OK] text_words=8  aligned_words=8  collapsed_spans=0  word_dur min/mean/max = 0.0126/0.0593/0.2327
+
+[7/10] 4-25_2/817: "You made some small job in my lady’s room—you and your confe..."
+  [OK] text_words=26  aligned_words=26  collapsed_spans=0  word_dur min/mean/max = 0.0041/0.0214/0.0553
+
+[8/10] 4-25_2/567: "But I presume that this other goose upon the sideboard, whic..."
+  [OK] text_words=25  aligned_words=25  collapsed_spans=0  word_dur min/mean/max = 0.0043/0.0227/0.0664
+
+[9/10] 4-25/172: "I am staying there while I conduct the inquiry.”"
+  [OK] text_words=9  aligned_words=9  collapsed_spans=0  word_dur min/mean/max = 0.0155/0.0619/0.2113
+
+[10/10] 4-30/651: "The first had walked both ways, but the other had run swiftl..."
+  [OK] text_words=36  aligned_words=36  collapsed_spans=0  word_dur min/mean/max = 0.0028/0.0141/0.0823
+
+============================================================
+ALIGNMENT QUALITY CHECK
+============================================================
+  n_checked: 10
+  n_aligned_cleanly: 10
+  pass_ratio: 1.0
+  pass_threshold: 0.9
+  passed: True
+  audio_clips_per_class: {'AA': 5, 'AE': 5, 'AH': 5, 'AO': 5, 'AW': 3, 'AY': 5, 'B': 5, 'CH': 1}...
+  audio_output_dir: /Users/fekrymostafa/Desktop/kalam/Project kalam/cache/encoder/align_audio
+
+Wrote /Users/fekrymostafa/Desktop/kalam/Project kalam/logs/encoder/alignment_check.json
+Audio clips: /Users/fekrymostafa/Desktop/kalam/Project kalam/cache/encoder/align_audio/<phoneme_class>/
+Listen to a few from each class — they should sound like the class name.
