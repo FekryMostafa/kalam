@@ -65,6 +65,18 @@ The LLM resolves ambiguity from sentence context (same way it knows "_at sat on 
 
 See [`app/decoder_prompt.md`](app/decoder_prompt.md) and [`docs/llm_decoder_findings.md`](docs/llm_decoder_findings.md).
 
+## Status (Sep 2026)
+
+- Measurement, preprocessing, phoneme inventory, splits, CTC decode/PER, LLM decoding stage, and the
+  8-channel acquisition rig (`docs/hardware.md`) are implemented and logged.
+- The LLM stage reaches 0% WER on 10 Gaddy silent-test sentences with **simulated** encoder noise
+  (`logs/llm_decoder_v4_results.json`). That bounds the decoder, not the system.
+- Encoder training (Conformer-CTC, multi-loss, 3.48M params) started on 8,055 examples and stopped at
+  the Apple MPS memory ceiling after ~70 steps (`logs/encoder/full_run.log`). **No WER on real silent
+  EMG has been produced yet.**
+- `app/encoder/model.py`, `train.py`, `data/dataset.py`, `data/loader.py`, `data/align.py` are referenced
+  below but are not in this repository; they were never committed and are being recovered or rewritten.
+
 ## Repo layout
 
 ```
