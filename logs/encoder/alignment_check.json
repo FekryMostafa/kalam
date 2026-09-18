@@ -44,11 +44,11 @@
       "Y": 5,
       "Z": 5
     },
-    "audio_output_dir": "/Users/fekrymostafa/Desktop/kalam/Project kalam/cache/encoder/align_audio"
+    "audio_output_dir": "<repo>/cache/encoder/align_audio"
   },
   "per_utterance": [
     {
-      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/5-2/554_audio_clean.flac",
+      "audio_path": "<repo>/dataset/nonparallel_data/5-2/554_audio_clean.flac",
       "text": "I could not live there longer without some advice.",
       "n_words_text": 9,
       "n_words_aligned": 9,
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-24/525_audio_clean.flac",
+      "audio_path": "<repo>/dataset/nonparallel_data/4-24/525_audio_clean.flac",
       "text": "\u201cIt may give him a sleepless night.",
       "n_words_text": 7,
       "n_words_aligned": 7,
@@ -202,7 +202,7 @@
       ]
     },
     {
-      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-30/388_audio_clean.flac",
+      "audio_path": "<repo>/dataset/nonparallel_data/4-30/388_audio_clean.flac",
       "text": "\u201cBut what is the good of all these vague theories,\u201d cried the banker, impatiently, \u201cwhen I have told you that I saw Arthur with the coronet in his hands?\u201d",
       "n_words_text": 29,
       "n_words_aligned": 29,
@@ -447,7 +447,7 @@
       ]
     },
     {
-      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-25/334_audio_clean.flac",
+      "audio_path": "<repo>/dataset/nonparallel_data/4-25/334_audio_clean.flac",
       "text": "Mrs. St. Clair has most kindly put two rooms at my disposal, and you may rest assured that she will have nothing but a welcome for my friend and colleague.",
       "n_words_text": 30,
       "n_words_aligned": 30,
@@ -700,7 +700,7 @@
       ]
     },
     {
-      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/voiced_parallel_data/5-11/60_audio_clean.flac",
+      "audio_path": "<repo>/dataset/voiced_parallel_data/5-11/60_audio_clean.flac",
       "text": "At the same time four of their fighting machines, similarly armed with tubes, crossed the river, and two of them, black against the western sky, came into sight of myself and the curate as we hurried wearily and painfully along the road that runs northward out of Halliford.",
       "n_words_text": 48,
       "n_words_aligned": 48,
@@ -1097,7 +1097,7 @@
       ]
     },
     {
-      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-23/18_audio_clean.flac",
+      "audio_path": "<repo>/dataset/nonparallel_data/4-23/18_audio_clean.flac",
       "text": "\u201cOh, Anstruther would do your work for you.",
       "n_words_text": 8,
       "n_words_aligned": 8,
@@ -1174,7 +1174,7 @@
       ]
     },
     {
-      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-25_2/817_audio_clean.flac",
+      "audio_path": "<repo>/dataset/nonparallel_data/4-25_2/817_audio_clean.flac",
       "text": "You made some small job in my lady\u2019s room\u2014you and your confederate Cusack\u2014and you managed that he should be the man sent for.",
       "n_words_text": 26,
       "n_words_aligned": 26,
@@ -1395,7 +1395,7 @@
       ]
     },
     {
-      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-25_2/567_audio_clean.flac",
+      "audio_path": "<repo>/dataset/nonparallel_data/4-25_2/567_audio_clean.flac",
       "text": "But I presume that this other goose upon the sideboard, which is about the same weight and perfectly fresh, will answer your purpose equally well?\u201d",
       "n_words_text": 25,
       "n_words_aligned": 25,
@@ -1608,7 +1608,7 @@
       ]
     },
     {
-      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-25/172_audio_clean.flac",
+      "audio_path": "<repo>/dataset/nonparallel_data/4-25/172_audio_clean.flac",
       "text": "I am staying there while I conduct the inquiry.\u201d",
       "n_words_text": 9,
       "n_words_aligned": 9,
@@ -1693,7 +1693,7 @@
       ]
     },
     {
-      "audio_path": "/Users/fekrymostafa/Desktop/kalam/Project kalam/dataset/nonparallel_data/4-30/651_audio_clean.flac",
+      "audio_path": "<repo>/dataset/nonparallel_data/4-30/651_audio_clean.flac",
       "text": "The first had walked both ways, but the other had run swiftly, and, as his tread was marked in places over the depression of the boot, it was obvious that he had passed after the other.",
       "n_words_text": 36,
       "n_words_aligned": 36,

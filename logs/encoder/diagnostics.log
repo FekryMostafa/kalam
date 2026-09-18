@@ -5,7 +5,7 @@ PEAK MEMORY (real utterances up to T=34201 EMG frames = 34.2s)
 ============================================================
 
  batch     after_fwd     after_bwd    after_step  status
-/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
+<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
   return torch.ctc_loss(
      4       12.00 GiB       12.78 GiB       12.81 GiB  OK
      8       22.52 GiB       22.49 GiB       22.50 GiB  OK
