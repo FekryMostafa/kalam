@@ -5,7 +5,7 @@ Building model...
 ============================================================
 DRY RUN: device=mps, steps=3
 ============================================================
-/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
+<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
   return torch.ctc_loss(
 step 0: total=57.468 ctc=55.637 frame_ce=3.662 contrast=0.000 v=2 s=2 pairs=0 frame=2
 step 1: total=36.121 ctc=34.390 frame_ce=3.461 contrast=0.000 v=2 s=2 pairs=0 frame=2
@@ -13,4 +13,4 @@ step 2: total=21.653 ctc=20.013 frame_ce=3.281 contrast=0.000 v=2 s=2 pairs=0 fr
 ------------------------------------------------------------
 all_finite=True  params_changed=True
 ------------------------------------------------------------
-wrote /Users/fekrymostafa/Desktop/kalam/Project kalam/logs/encoder/voiced_larynx_masked_dryrun.json
+wrote <repo>/logs/encoder/voiced_larynx_masked_dryrun.json

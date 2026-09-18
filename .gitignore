@@ -5,3 +5,4 @@ dataset/
 *.egg-info/
 .ruff_cache/
 uv.lock
+.DS_Store

@@ -4,7 +4,7 @@ Building val dataset...
   val: 400 examples (200 silent / 200 voiced)
 Building model...
   params=3,483,488
-/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
+<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
   return torch.ctc_loss(
 epoch 0 step 10 total=5.340 ctc=3.326 frame_ce=2.862 contrast=1.943 grad=3.75
 epoch 0 step 20 total=5.328 ctc=3.244 frame_ce=3.001 contrast=1.945 grad=3.06

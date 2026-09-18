@@ -34,7 +34,7 @@ alternatives            indistinguishable from silent EMG
 
 Trained on Gaddy 2020 EMG corpus (single speaker, 19.4h voiced + silent).
 
-- **Architecture**: Conformer (~10M params), 8-channel EMG @ 1 kHz → stride-10 conv frontend → 4 Conformer blocks @ 100 Hz → linear head.
+- **Architecture**: Conformer (planned ~10M params; the logged run used 3.48M), 8-channel EMG @ 1 kHz → stride-10 conv frontend → 4 Conformer blocks @ 100 Hz → linear head.
 - **Output inventory**: ~31 collapsed-phoneme classes — 21 unambiguous phonemes + 8 voicing-pair classes (B/P, T/D, K/G, S/Z, F/V, SH/ZH, CH/JH, DH/TH) + 1 CTC blank. Voicing pairs are physically indistinguishable from silent EMG; the inventory encodes that constraint by construction.
 - **Larynx (ch3) masked** during both train and inference. The throat electrode picks up vocal-fold activity that vanishes in silent speech (rms ratio 0.37×); training on it would teach the encoder a cue it loses at deployment.
 - **Joint voiced + silent training**, balanced batches. Silent is the deployment target and gets higher loss weight.
@@ -61,7 +61,7 @@ The encoder's phoneme posteriors are formatted as text with voicing alternatives
 K AE (T:0.5/D:0.5) ...
 ```
 
-The LLM resolves ambiguity from sentence context (same way it knows "_at sat on the mat" → "cat" not "pat"). On simulated encoder noise, Gemini hits 0% WER on a 10-sentence test set.
+The LLM resolves ambiguity from sentence context (same way it knows "_at sat on the mat" → "cat" not "pat"). On simulated encoder noise, Gemini hits 0% WER on a 10-sentence test set; no result on real encoder output exists yet (see Status).
 
 See [`app/decoder_prompt.md`](app/decoder_prompt.md) and [`docs/llm_decoder_findings.md`](docs/llm_decoder_findings.md).
 
@@ -84,14 +84,14 @@ app/
   decoder_prompt.md           production prompt template for the LLM stage
   encoder/
     vocab.py                  ARPAbet + collapsed-inventory phoneme classes
-    model.py                  ConformerCTC encoder
-    train.py                  multi-loss training loop + dry-run smoke test
+    model.py                  ConformerCTC encoder   [not in repo; see Status]
+    train.py                  multi-loss training loop + dry-run smoke test   [not in repo; see Status]
     eval.py                   CTC greedy decode + PER metric
     data/
-      preprocess.py           EMG cleanup (notch, drift, tanh squash)
-      dataset.py              GaddyEMGDataset + session discovery + GADDY_ROOT
-      loader.py               collate + DataLoader factory
-      align.py                forced alignment for frame labels (voiced only)
+      preprocess.py           EMG cleanup (60 Hz notch + harmonics, 2 Hz high-pass, per-channel z-score)
+      dataset.py              GaddyEMGDataset + session discovery + GADDY_ROOT   [not in repo; see Status]
+      loader.py               collate + DataLoader factory   [not in repo; see Status]
+      align.py                forced alignment for frame labels (voiced only)   [not in repo; see Status]
 
 docs/                          findings, architecture comparisons, prev research
 experiments/                   per-experiment run scripts

@@ -1,6 +1,6 @@
 Output paths:
-  report:      /Users/fekrymostafa/Desktop/kalam/Project kalam/logs/encoder/alignment_check.json
-  audio clips: /Users/fekrymostafa/Desktop/kalam/Project kalam/cache/encoder/align_audio/<phoneme_class>/
+  report:      <repo>/logs/encoder/alignment_check.json
+  audio clips: <repo>/cache/encoder/align_audio/<phoneme_class>/
 
 Loading voiced dataset (no frame labels)...
   7065 voiced utterances available
@@ -51,8 +51,8 @@ ALIGNMENT QUALITY CHECK
   pass_threshold: 0.9
   passed: True
   audio_clips_per_class: {'AA': 5, 'AE': 5, 'AH': 5, 'AO': 5, 'AW': 3, 'AY': 5, 'B': 5, 'CH': 1}...
-  audio_output_dir: /Users/fekrymostafa/Desktop/kalam/Project kalam/cache/encoder/align_audio
+  audio_output_dir: <repo>/cache/encoder/align_audio
 
-Wrote /Users/fekrymostafa/Desktop/kalam/Project kalam/logs/encoder/alignment_check.json
-Audio clips: /Users/fekrymostafa/Desktop/kalam/Project kalam/cache/encoder/align_audio/<phoneme_class>/
+Wrote <repo>/logs/encoder/alignment_check.json
+Audio clips: <repo>/cache/encoder/align_audio/<phoneme_class>/
 Listen to a few from each class — they should sound like the class name.

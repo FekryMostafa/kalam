@@ -2,9 +2,9 @@ Building dataset...
   examples=7065 sessions=17 modes=['voiced'] mask_channels=[3] with_frame_labels=True balanced_sampler=False
 Building model...
   params=3,483,488
-/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
+<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py:3107: UserWarning: The operator 'aten::_ctc_loss' is not currently supported on the MPS backend and will fall back to run on the CPU. This may have performance implications. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/mps/MPSFallback.mm:34.)
   return torch.ctc_loss(
-/Users/fekrymostafa/Desktop/kalam/Project kalam/app/encoder/train.py:244: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+<repo>/app/encoder/train.py:244: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
 Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:837.)
   sums[k] += float(res[k] if isinstance(res[k], torch.Tensor) else res['total'])
 epoch 0 step 10 total=5.723 ctc=3.834 frame_ce=3.777 contrast=0.000 grad=13.05
@@ -84,55 +84,55 @@ epoch 0 step 740 total=4.447 ctc=3.104 frame_ce=2.686 contrast=0.000 grad=2.09
 epoch 0 step 750 total=4.370 ctc=2.979 frame_ce=2.782 contrast=0.000 grad=2.17
 epoch 0 step 760 total=4.947 ctc=3.339 frame_ce=3.216 contrast=0.000 grad=5.81
 Traceback (most recent call last):
-  File "/Users/fekrymostafa/Desktop/kalam/Project kalam/experiments/encoder/voiced_larynx_masked.py", line 124, in <module>
+  File "<repo>/experiments/encoder/voiced_larynx_masked.py", line 124, in <module>
     print(f'  val: {len(val_dataset)} examples ({n_v_silent} silent / {n_v_voiced} voiced)')
 ^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/Project kalam/experiments/encoder/voiced_larynx_masked.py", line 119, in main
+  File "<repo>/experiments/encoder/voiced_larynx_masked.py", line 119, in main
     with_frame_labels=False,  # val PER doesn't need frame labels
  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/Project kalam/app/encoder/train.py", line 235, in train_ctc
+  File "<repo>/app/encoder/train.py", line 235, in train_ctc
     log_probs, _, out_lens = model(batch['emg'], batch['emg_lengths'])
           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/Project kalam/app/encoder/train.py", line 178, in _step
+  File "<repo>/app/encoder/train.py", line 178, in _step
     has_frame = batch['has_frame_labels']
                                     ^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
     return forward_call(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/Project kalam/app/encoder/model.py", line 90, in forward
+  File "<repo>/app/encoder/model.py", line 90, in forward
     x, out_lengths = self.conformer(x, out_lengths)
                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
     return forward_call(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torchaudio/models/conformer.py", line 292, in forward
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torchaudio/models/conformer.py", line 292, in forward
     x = layer(x, encoder_padding_mask)
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
     return forward_call(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torchaudio/models/conformer.py", line 194, in forward
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torchaudio/models/conformer.py", line 194, in forward
     x, _ = self.self_attn(
            ^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
     return forward_call(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/activation.py", line 1492, in forward
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/modules/activation.py", line 1492, in forward
     attn_output, attn_output_weights = F.multi_head_attention_forward(
                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/fekrymostafa/Desktop/kalam/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py", line 6682, in multi_head_attention_forward
+  File "<repo>/experiments/.venv311/lib/python3.11/site-packages/torch/nn/functional.py", line 6682, in multi_head_attention_forward
     attn_output = scaled_dot_product_attention(
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 RuntimeError: MPS backend out of memory (MPS allocated: 25.70 GiB, other allocations: 2.16 GiB, max allowed: 27.20 GiB). Tried to allocate 256 bytes on shared pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).

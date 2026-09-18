@@ -23,4 +23,4 @@ SUMMARY
   inventory: {'arpabet_size': 39, 'collapsed_classes': 31, 'total_ctc_classes_with_blank': 32, 'classes_seen_in_corpus': 31, 'classes_unseen': []}
   silent_voiced_overlap: {'silent_utterances': 1588, 'voiced_utterances': 7065, 'overlap_count': 1588, 'note': 'overlap = utterances recorded in both modes (parallel pairs). expected to be > 0 for Gaddy. when defining the silent test set, exclude its book_locations from voiced training.'}
 
-Wrote /Users/fekrymostafa/Desktop/kalam/Project kalam/logs/encoder/phoneme_targets.json
+Wrote <repo>/logs/encoder/phoneme_targets.json

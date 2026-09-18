@@ -123,7 +123,7 @@ LLM hallucinated, demonstrating soft-prefix path
 without phoneme intermediate fails)
 ```
 
-The "sibling repo" is `/Users/fekrymostafa/Desktop/kalam/experiments/`,
+The "sibling repo" is `<repo>/experiments/`,
 gitignored separately from this repo.
 
 ## Next step
