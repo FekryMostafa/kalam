@@ -6,3 +6,7 @@ dataset/
 .ruff_cache/
 uv.lock
 .DS_Store
+docs/prev_research/
+CLAUDE.md
+AGENTS.md
+hooks/

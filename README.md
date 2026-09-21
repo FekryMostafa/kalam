@@ -109,7 +109,6 @@ dataset/                       Gaddy corpus (gitignored)
 - [`docs/llm_decoder_findings.md`](docs/llm_decoder_findings.md) — LLM stage results
 - [`docs/articulator_anatomy.md`](docs/articulator_anatomy.md) — electrode placement, silent-vs-voiced ratios
 - [`docs/findings.md`](docs/findings.md) — paired-data measurements
-- [`docs/prev_research/`](docs/prev_research/) — Gaddy 2020, MONA LISA 2024, AlterEgo 2018, Mohapatra 2025
 
 ## Benchmark target
 
